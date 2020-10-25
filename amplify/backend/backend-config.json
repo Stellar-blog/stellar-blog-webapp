@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "stellarblogwebapp405b1a53": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

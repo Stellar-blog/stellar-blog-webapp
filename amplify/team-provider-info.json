@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-stellarblogwebapp-dev-151000-authRole",
+      "UnauthRoleArn": "arn:aws:iam::246749645389:role/amplify-stellarblogwebapp-dev-151000-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::246749645389:role/amplify-stellarblogwebapp-dev-151000-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-stellarblogwebapp-dev-151000-deployment",
+      "UnauthRoleName": "amplify-stellarblogwebapp-dev-151000-unauthRole",
+      "StackName": "amplify-stellarblogwebapp-dev-151000",
+      "StackId": "arn:aws:cloudformation:us-west-2:246749645389:stack/amplify-stellarblogwebapp-dev-151000/e2796680-170e-11eb-ac5c-02f068718dc3",
+      "AmplifyAppId": "d1q9e9hxqj5t0u"
+    },
+    "categories": {
+      "auth": {
+        "stellarblogwebapp405b1a53": {}
+      }
+    }
+  }
+}
