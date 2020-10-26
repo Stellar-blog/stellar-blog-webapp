@@ -11,7 +11,8 @@ export default function Home() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>
-					Welcome to <a href='https://nextjs.org'>Stellar-blog!</a>
+					Welcome to{' '}
+					<a href='https://nextjs.org'>Stellar-blog! feature 1</a>
 				</h1>
 
 				<p className={styles.description}>
