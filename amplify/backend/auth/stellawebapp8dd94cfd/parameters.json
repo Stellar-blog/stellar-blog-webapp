@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "stellarblogwebapp405b1a53_identitypool_405b1a53",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "stella405b1a53",
-    "userPoolName": "stellarblogwebapp405b1a53_userpool_405b1a53",
+    "identityPoolName": "stellawebapp8dd94cfd_identitypool_8dd94cfd",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "stella8dd94cfd",
+    "userPoolName": "stellawebapp8dd94cfd_userpool_8dd94cfd",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "stella405b1a53_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "stella8dd94cfd_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "405b1a53",
-    "resourceName": "stellarblogwebapp405b1a53",
+    "sharedId": "8dd94cfd",
+    "resourceName": "stellawebapp8dd94cfd",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,7 +46,12 @@
         ]
     },
     "useDefault": "default",
+    "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
     "dependsOn": []
 }
