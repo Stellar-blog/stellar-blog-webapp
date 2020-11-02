@@ -19,9 +19,6 @@ function SpaceMenu({ space }) {
             <div>
                 Followers
             </div>
-            <div>
-                Following
-            </div>
         </section>
     )
 }
