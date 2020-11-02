@@ -12,7 +12,7 @@ import {
     ImageUploader,
     DashboardMain,
     ErrorMessage,
-} from '../../pages/styles'
+} from '../../styles'
 
 const defaultFormState = {
     title: '',

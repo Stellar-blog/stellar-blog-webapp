@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import {
     Button,
-} from '../../pages/styles'
+} from '../../styles'
 
 function AuthBtn({ href, type, text }) {
     return (

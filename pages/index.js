@@ -7,7 +7,7 @@ import {
 	Center,
 	Button,
 	Typography,
-} from './styles'
+} from '../styles'
 import { AWS_AUTH_FORM_TYPE } from '../constants'
 
 export default function Home() {

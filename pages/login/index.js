@@ -9,7 +9,7 @@ import {
     Center,
     Form,
     ErrorMessage,
-} from '../../pages/styles'
+} from '../../styles'
 import { AWS_AUTH_FORM_TYPE } from '../../constants'
 
 const defaultFormState = {

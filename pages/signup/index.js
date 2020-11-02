@@ -11,7 +11,7 @@ import {
     Form,
     ErrorMessage,
     InfoMessage,
-} from '../../pages/styles'
+} from '../../styles'
 import { AWS_AUTH_FORM_TYPE } from '../../constants'
 import { profileGenerator } from '../../utils/profileGenerator'
 

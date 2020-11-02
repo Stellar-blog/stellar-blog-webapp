@@ -8,7 +8,7 @@ import Card from '../../components/Card'
 import {
     DashboardMain,
     Center,
-} from '../../pages/styles'
+} from '../../styles'
 
 function Dashboard() {
 

@@ -4,7 +4,7 @@ import { Storage } from 'aws-amplify'
 import {
     CardContainer,
     ImageLoader
-} from '../../pages/styles'
+} from '../../styles'
 
 function Card({ data }) {
 
