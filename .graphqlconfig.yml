@@ -1,6 +1,6 @@
 projects:
-  stellarBlogGraphqlv2:
-    schemaPath: amplify/backend/api/stellarBlogGraphqlv2/build/schema.graphql
+  stellagraphqlapi:
+    schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
     excludes:
