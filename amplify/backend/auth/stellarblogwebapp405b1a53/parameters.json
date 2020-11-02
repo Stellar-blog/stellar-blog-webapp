@@ -1,6 +1,6 @@
 {
     "identityPoolName": "stellarblogwebapp405b1a53_identitypool_405b1a53",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "stella405b1a53",
     "userPoolName": "stellarblogwebapp405b1a53_userpool_405b1a53",
     "autoVerifiedAttributes": [

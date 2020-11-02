@@ -1,0 +1,1 @@
+export { default as AWS_AUTH_FORM_TYPE } from './awsAuthFormType'
