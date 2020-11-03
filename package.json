@@ -1,21 +1,21 @@
 {
-	"name": "stellar-blog-webapp",
-	"version": "0.1.0",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start"
-	},
-	"dependencies": {
-		"@aws-amplify/ui-react": "^0.2.24",
-		"aws-amplify": "^3.3.4",
-		"next": "9.5.5",
-		"react": "17.0.1",
-		"react-dom": "17.0.1",
-		"styled-components": "^5.2.0",
-		"uuid": "^8.3.1"
-	},
-	"devDependencies": {
-		"babel-plugin-styled-components": "^1.11.1"
-	}
+  "name": "stellar-blog-webapp",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@sls-next/serverless-component": "1.17.0",
+    "aws-amplify": "^3.3.4",
+    "next": "9.5.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
+  }
 }
