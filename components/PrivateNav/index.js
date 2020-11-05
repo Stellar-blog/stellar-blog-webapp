@@ -1,3 +1,4 @@
+import checkUser from '../../api/checkUser'
 import NewPostBtn from '../NewPostBtn'
 import UserBtn from '../UserBtn'
 import Logo from '../LogoBtn'
@@ -6,14 +7,18 @@ import {
     MenuContainer
 } from './styles'
 
-function PrivateNavBar() {
+const PrivateNavBar = () => {
+    const user = checkUser()
+
     return (
         <Nav>
-            <Logo href="/dashboard" />
-            <MenuContainer>
-                <NewPostBtn />
-                <UserBtn />
-            </MenuContainer>
+            <div className="nav-subcontainer">
+                <Logo href="/dashboard" />
+                <MenuContainer>
+                    <NewPostBtn />
+                    <UserBtn user={user}/>
+                </MenuContainer>
+            </div>
         </Nav>
     )
 }

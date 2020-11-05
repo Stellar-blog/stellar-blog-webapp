@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Storage } from 'aws-amplify'
 
+import ImageLoader from './ImageLoader'
 import {
     CardContainer,
-    ImageLoader
-} from '../../styles'
+} from './styles'
 
 function Card({ data }) {
 
-    const [imageUrl, setImageUrl] = useState('/loading.svg')
+    if (!data) return null;
 
-    useEffect(async () => {
-        //Currently support only 1 phone per post
-        //Will work on to support multiple photos
-        const url = await Storage.get(data.postImages.items[0].desktopKey)
-        setImageUrl(url)
+    const [imageUrls, setImageUrls] = useState(['/loading.svg'])
+
+    useEffect(() => {
+        Promise.all(data.postImages.items.map((image) => Storage.get(image.desktopKey)))
+        .then(urls => setImageUrls(urls))
     }, [])
 
     return (
@@ -27,11 +27,7 @@ function Card({ data }) {
                     Follow
                 </div>
             </div>
-            <ImageLoader
-                src={imageUrl}
-                alt={data.title}
-                height={data.postImages.items[0].size}
-            />
+            <ImageLoader imageUrls={imageUrls} data={data} />
             <div className="name">
                 {
                     data.title

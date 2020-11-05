@@ -11,6 +11,7 @@ import {
     Form,
     ErrorMessage,
     InfoMessage,
+    InfoLink,
 } from '../../styles'
 import { AWS_AUTH_FORM_TYPE } from '../../constants'
 import { profileGenerator } from '../../utils/profileGenerator'
@@ -31,10 +32,23 @@ function Signup() {
     const [step, setStep] = useState(AWS_AUTH_FORM_TYPE.SIGNUP)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
+    const [resent, setResent] = useState(false)
 
     useEffect(() => {
         inputRef.current.focus()
     }, [step])
+
+    const handleResend = async () => {
+        const { username } = formState
+        try {
+            await Auth.resendSignUp(username)
+            setResent(true)
+        } catch(e) {
+            console.log("sign up error : ", e)
+            setError(e)
+        }
+        
+    }
 
     const handleSignUp = async (e) => {
         e.preventDefault()
@@ -161,7 +175,7 @@ function Signup() {
                             <Form onSubmit={handleConfirmSignUp}>
                                 <InfoMessage>
                                     We've sent a 6-digit auth code to your email.
-                            </InfoMessage>
+                                </InfoMessage>
                                 <input
                                     type="number"
                                     placeholder="Auth Code"
@@ -172,6 +186,22 @@ function Signup() {
                                 />
                                 {
                                     error && <ErrorMessage>{error.message}</ErrorMessage>
+                                }
+                                {
+                                    resent
+                                    ?
+                                    (
+                                    <ErrorMessage>
+                                        New code has been sent again
+                                    </ErrorMessage>
+                                    )
+                                    :
+                                    (
+                                    <InfoLink onClick={handleResend}>
+                                        resend auth code
+                                    </InfoLink>
+
+                                    )
                                 }
                                 <button type="submit">
                                     {

@@ -9,7 +9,7 @@ import {
     DropDownMenus,
 } from './styles'
 
-function NewPostBtn() {
+const UserBtn = ({ user }) => { 
 
     const router = useRouter()
     const [show, setShow] = useState(false)
@@ -51,7 +51,7 @@ function NewPostBtn() {
                 className="dropdownmenu"
             />
             <DropDownMenus className={show ? "show" : "no-show"}>
-                <Link href="/dashboard" passHref>
+                <Link href={user ? `/space/${user.username}` : "/dashboard"} passHref>
                     <a className="dropdownmenu">
                         <img
                             src="/space.svg"
@@ -59,7 +59,7 @@ function NewPostBtn() {
                         />
                         My Space</a>
                 </Link>
-                <Link href="/dashboard" passHref>
+                <Link href="/settings" passHref>
                     <a className="dropdownmenu">
                         <img
                             src="/settings.svg"
@@ -77,4 +77,4 @@ function NewPostBtn() {
     )
 }
 
-export default NewPostBtn
+export default UserBtn

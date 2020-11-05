@@ -31,6 +31,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -46,10 +53,3 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
-
-# package directories
-node_modules
-jspm_packages
-
-# Serverless directories
-.serverless

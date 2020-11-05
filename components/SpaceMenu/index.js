@@ -1,7 +1,10 @@
+import {
+    SpaceMenuContainer
+} from './styles'
 
-function SpaceMenu({ space }) {
-    return (
-        <section>
+const SpaceMenu = ({ space, isOwner }) => (
+    <SpaceMenuContainer>
+        <div className="profileContainer">
             <div>
                 <img
                     src={space.defaultProfile}
@@ -13,14 +16,33 @@ function SpaceMenu({ space }) {
                     space.username
                 }
             </div>
-            <div>
-                Posts
+        </div>
+        {
+            !isOwner &&
+            (
+                <div className="menu">
+                    Follow
+                </div>
+            )
+        }
+        {
+            isOwner &&
+            (
+                <div className="menu">
+                    Settings
+                </div>
+            )
+        }
+        <div className="menu not-available">
+            Message
             </div>
-            <div>
-                Followers
-            </div>
-        </section>
-    )
-}
+        <div className="menu">
+            {`Followers : ${space.follower.items.length}`}
+        </div>
+        <div className="menu selected lastmenu">
+            {`Posts : ${space.posts.items.length}`}
+        </div>
+    </SpaceMenuContainer>
+)
 
 export default SpaceMenu

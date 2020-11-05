@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import { API, withSSRContext } from 'aws-amplify'
+import { withSSRContext } from 'aws-amplify'
 
-import { postsByStatus } from '../../src/graphql/queries'
+import getPosts from '../../api/getPosts'
+import CommonHeader from '../../components/CommonHeader'
 import NavBar from '../../components/PrivateNav'
 import Card from '../../components/Card'
 import {
@@ -12,30 +11,11 @@ import {
 
 function Dashboard() {
 
-    const [list, setList] = useState([]);
-
-    useEffect(() => {
-        fetchPosts()
-    }, [])
-
-    const fetchPosts = async () => {
-        const res = await API.graphql({
-            query: postsByStatus,
-            variables: {
-                status: "PUBLIC",
-                sortDirection: "DESC",
-            },
-        })
-
-        console.log("response : ", res.data.postsByStatus.items)
-        setList(res.data.postsByStatus.items)
-    }
+    const list = getPosts()
 
     return (
         <>
-            <Head>
-                <title>Stellar blog</title>
-            </Head>
+            <CommonHeader />
             <DashboardMain>
                 <NavBar />
                 <Center type="dashboard">
