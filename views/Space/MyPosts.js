@@ -4,12 +4,14 @@ import {
     MyPostsContainer
 } from './styles'
 
-const SpaceMenu = ({ lists, isOwner }) => (
+const SpaceMenu = ({ lists, isOwner, loading }) => (
     <MyPostsContainer>
         {
-            lists.length > 0
-                ? lists.map((list) => <Card key={list.id} data={list} isOwner={isOwner} />)
-                : <NoPosts />
+            loading
+                ? null
+                : lists.length > 0
+                    ? lists.map((list) => <Card key={list.id} data={list} isOwner={isOwner} />)
+                    : <NoPosts />
         }
     </MyPostsContainer>
 )

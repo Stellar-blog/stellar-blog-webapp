@@ -13,14 +13,15 @@ import {
 } from '../../styles'
 
 function Space({ space, isOwner }) { 
-    const lists = getPosts(space.username)
+    const { lists, loading } = getPosts()
+
     return (
         <>
             <Header />
             <DashboardMain>
                 <NavBar />
                 <FlexBasicContainer>
-                    <MyPosts lists={lists} isOwner={isOwner} />
+                    <MyPosts lists={lists} loading={loading} isOwner={isOwner} />
                     <SpaceMenu space={space} isOwner={isOwner} />
                 </FlexBasicContainer>
             </DashboardMain>

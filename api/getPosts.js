@@ -5,7 +5,8 @@ import { postsByStatus } from '../src/graphql/queries'
 
 function getPosts(username){
 
-    const [ list , setList ] = useState([])
+    const [ lists , setLists ] = useState([])
+    const [ loading, setLoading ] = useState(true)
 
     const variablesGenerator = (username) => {
         const defaultVariables = {
@@ -29,10 +30,14 @@ function getPosts(username){
             query: postsByStatus,
             variables: variablesGenerator(username)
         })
-        setList(res.data.postsByStatus.items)
+        setLists(res.data.postsByStatus.items)
+        setLoading(false)
     }, [])
 
-    return list
+    return {
+        lists,
+        loading 
+    }
 } 
 
 export default getPosts

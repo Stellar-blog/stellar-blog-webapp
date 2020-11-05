@@ -1,6 +1,6 @@
 import { withSSRContext } from 'aws-amplify'
 
-import getPosts from '../../api/getPosts'
+import getPosts, { lists } from '../../api/getPosts'
 import CommonHeader from '../../components/CommonHeader'
 import NavBar from '../../components/PrivateNav'
 import Card from '../../components/Card'
@@ -11,7 +11,7 @@ import {
 
 function Dashboard() {
 
-    const list = getPosts()
+    const { lists } = getPosts()
 
     return (
         <>
@@ -20,7 +20,7 @@ function Dashboard() {
                 <NavBar />
                 <Center type="dashboard">
                     {
-                        list.map((item) => <Card key={item.id} data={item} />)
+                        lists.map((item) => <Card key={item.id} data={item} />)
                     }
                 </Center>
             </DashboardMain>
