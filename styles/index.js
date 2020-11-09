@@ -19,7 +19,7 @@ export const Typography = styled.p`
 
 export const Button = styled.a`
   padding: 0.4rem 1rem;
-  margin: 0 1rem;
+  margin: 1rem;
 
   color: white;
   font-size: medium;
@@ -34,7 +34,6 @@ export const Button = styled.a`
   ${({ type }) => type === "no-box" && "background:none; border: none;"};
 
   text-decoration: none;
-  ;
 `
 
 export const Main = styled.div`

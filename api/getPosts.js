@@ -3,32 +3,17 @@ import { API } from 'aws-amplify'
 
 import { postsByStatus } from '../src/graphql/queries'
 
-function getPosts(username){
-
+function getPosts(){
     const [ lists , setLists ] = useState([])
     const [ loading, setLoading ] = useState(true)
-
-    const variablesGenerator = (username) => {
-        const defaultVariables = {
-            status: "PUBLIC",
-            sortDirection: "DESC",
-        }
-        if (username) {
-            return Object.assign(defaultVariables, {
-                filter: {
-                    username: {
-                        eq: username
-                    }
-                }
-            })
-        }
-        return defaultVariables
-    }
 
     useEffect(async ()=> {
         const res = await API.graphql({
             query: postsByStatus,
-            variables: variablesGenerator(username)
+            variables: {
+                status: "PUBLIC",
+                sortDirection: "DESC",
+            }
         })
         setLists(res.data.postsByStatus.items)
         setLoading(false)

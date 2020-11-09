@@ -2,7 +2,7 @@ import {
     SpaceMenuContainer
 } from './styles'
 
-const SpaceMenu = ({ space, isOwner }) => (
+const SpaceMenu = ({ space }) => (
     <SpaceMenuContainer>
         <div className="profileContainer">
             <div>
@@ -17,22 +17,9 @@ const SpaceMenu = ({ space, isOwner }) => (
                 }
             </div>
         </div>
-        {
-            !isOwner &&
-            (
-                <div className="menu">
-                    Follow
-                </div>
-            )
-        }
-        {
-            isOwner &&
-            (
-                <div className="menu">
-                    Settings
-                </div>
-            )
-        }
+        <div className="menu">
+            Follow
+        </div>
         <div className="menu not-available">
             Message
             </div>

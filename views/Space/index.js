@@ -1,8 +1,9 @@
-import { withSSRContext } from 'aws-amplify'
+import { useEffect } from 'react'
+import { withRouter } from 'next/router'
 
-import { listSpaces } from '../../src/graphql/queries'
-import getPosts from '../../api/getPosts'
-
+// import checkUser from '../../api/checkUser'
+import getPosts from '../../api/getPostsByUsername'
+import getSpace from '../../api/getSpace'
 import Header from '../../components/CommonHeader'
 import NavBar from '../../components/PrivateNav'
 import SpaceMenu from './SpaceMenu'
@@ -12,8 +13,15 @@ import {
     FlexBasicContainer
 } from '../../styles'
 
-function Space({ space, isOwner, username }) { 
-    const { lists, loading } = getPosts(username)
+function Space({ router }) { 
+    const { lists, loading  } = getPosts(router.query.id)
+    const { space, error } = getSpace(router.query.id)
+
+    useEffect(()=> {
+        if (error) {
+            router.push('/dashboard')
+        }
+    }, [error])
 
     return (
         <>
@@ -21,58 +29,15 @@ function Space({ space, isOwner, username }) {
             <DashboardMain>
                 <NavBar />
                 <FlexBasicContainer>
-                    <MyPosts lists={lists} loading={loading} isOwner={isOwner} />
-                    <SpaceMenu space={space} isOwner={isOwner} />
+                    <MyPosts lists={lists} loading={loading} />
+                    {
+                        space &&
+                        <SpaceMenu space={space} />
+                    }
                 </FlexBasicContainer>
             </DashboardMain>
         </>
     )
 }
 
-export async function getServerSideProps({ params, req, res }) {
-    const { Auth, API } = withSSRContext({ req })
-
-    const username = params.id
-
-    try{
-        const user = await Auth.currentAuthenticatedUser()
-
-        const space = await API.graphql({
-            query: listSpaces,
-            variables: {
-                filter: {
-                    username: {
-                        eq: username
-                    }
-                },
-            }
-        })
-
-        const userspace = space.data.listSpaces.items[0]
-    
-        if (userspace.length) {
-            throw new Error("No result")
-        }
-
-        let isOwner = false
-        if (user && user.attributes.sub === userspace.userId) {
-            isOwner = true
-        }
-    
-        return {
-            props: {
-                space: space.data.listSpaces.items[0],
-                isOwner,
-                username,
-            }
-        }
-    } catch(e) {
-        res.writeHead(302, { Location: '/dashboard' })
-        res.end()
-        return {
-            props: {}
-        }
-    }
-}
-
-export default Space
+export default withRouter(Space)

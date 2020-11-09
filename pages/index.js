@@ -27,7 +27,7 @@ export default function Home() {
 						Stellar is where you can create your own space and put whatever you want.
 					</Typography>
 					<Link href="/login" passHref>
-						<Button>
+						<Button className="get-started">
 							Get Started
 						</Button>
 					</Link>

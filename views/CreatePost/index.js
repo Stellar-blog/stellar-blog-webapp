@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { withSSRContext } from 'aws-amplify'
 
+import checkUser from '../../api/checkUser'
 import useForm from '../../hooks/useForm'
 import formValidator from './formValidator'
 import Header from '../../components/CommonHeader'
@@ -23,7 +23,9 @@ const defaultForm = {
     files: [],
 }
 
-function CreatePost({ userId }) {
+function CreatePost() {
+
+    const user = checkUser()
     const router = useRouter()
     const inputRef = useRef()
 
@@ -36,7 +38,7 @@ function CreatePost({ userId }) {
     } = useForm(
         defaultForm,
         formValidator,
-        userId,
+        user.attributes.sub,
         () => router.push('/dashboard')
     )
 
@@ -78,24 +80,6 @@ function CreatePost({ userId }) {
             </DashboardMain>
         </>
     )
-}
-
-export async function getServerSideProps({ req, res }) {
-    const { Auth } = withSSRContext({ req })
-    try {
-        const user = await Auth.currentAuthenticatedUser()
-        return {
-            props: {
-                userId: user.attributes.sub
-            }
-        }
-    } catch (e) {
-        res.writeHead(302, { Location: '/' })
-        res.end()
-        return {
-            props: {}
-        }
-    }
 }
 
 export default CreatePost;

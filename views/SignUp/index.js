@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { API, Auth, withSSRContext } from 'aws-amplify'
+import { API, Auth } from 'aws-amplify'
 
 import { createSpace } from '../../src/graphql/mutations'
 import NavBar from '../../components/Nav'
@@ -216,19 +216,6 @@ function Signup() {
             </Main>
         </>
     )
-}
-
-export async function getServerSideProps({ req, res }) {
-    const { Auth } = withSSRContext({ req })
-    try {
-        await Auth.currentAuthenticatedUser()
-        res.writeHead(302, { Location: '/dashboard' })
-        res.end()
-    } finally {
-        return {
-            props: {}
-        }
-    }
 }
 
 export default Signup;

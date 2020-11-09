@@ -1,1 +1,1 @@
-export { default, getServerSideProps } from '../../views/SignUp'
+export { default } from '../../views/SignUp'

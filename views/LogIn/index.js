@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { Auth, withSSRContext } from 'aws-amplify'
+import { Auth } from 'aws-amplify'
 
 import NavBar from '../../components/Nav'
 import {
@@ -65,7 +65,7 @@ function Login() {
         setGuestLoginLoading(true)
 
         try {
-            await Auth.signIn("spaceduck", "spaceduck123")
+            await Auth.signIn("spaceduck", "spaceduck123") //GUEST_ID // GUEST_PW
             router.push('/dashboard')
         } catch (e) {
             console.log("sign in error : ", e)
@@ -120,19 +120,6 @@ function Login() {
             </Main>
         </>
     )
-}
-
-export async function getServerSideProps({ req, res }) {
-    const { Auth } = withSSRContext({ req })
-    try {
-        await Auth.currentAuthenticatedUser()
-        res.writeHead(302, { Location: '/dashboard' })
-        res.end()
-    } finally {
-        return {
-            props: {}
-        }
-    }
 }
 
 export default Login;

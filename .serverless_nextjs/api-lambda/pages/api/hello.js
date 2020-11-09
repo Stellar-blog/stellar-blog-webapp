@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "XVip");
+/******/ 	return __webpack_require__(__webpack_require__.s = "IAxd");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -522,6 +522,115 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "IAxd":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fkL1");
+/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__);
+
+      
+      
+      
+
+      
+    const { processEnv } = __webpack_require__("fXeI")
+    processEnv([])
+  
+      
+      const runtimeConfig = {}
+      
+      const { parse: parseUrl } = __webpack_require__("bzos")
+      const { apiResolver } = __webpack_require__("PCLx")
+      
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("N6Fi")
+  
+
+      
+
+      
+
+      
+
+      
+    const getCustomRouteMatcher = pathMatch(true)
+    const prepareDestination = __webpack_require__("6mnf").default
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          const { parsedDestination } = prepareDestination(
+            rewrite.destination,
+            params,
+            parsedUrl.query,
+            true,
+            ""
+          )
+
+          Object.assign(parsedUrl.query, parsedDestination.query)
+          delete parsedDestination.query
+
+          Object.assign(parsedUrl, parsedDestination)
+
+          if (parsedUrl.pathname === '/api/hello'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+      /* harmony default export */ __webpack_exports__["default"] = (async (req, res) => {
+        try {
+          await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+
+          // We need to trust the dynamic route params from the proxy
+          // to ensure we are using the correct values
+          const trustQuery = req.headers['x-vercel-id']
+          const parsedUrl = handleRewrites(parseUrl(req.url, true))
+
+          
+
+          const params = {}
+
+          const resolver = __webpack_require__("Nxiy")
+          await apiResolver(
+            req,
+            res,
+            Object.assign({}, parsedUrl.query, params ),
+            resolver,
+            {previewModeId:"abafc58fda1a61083c2f10941ad6c141",previewModeSigningKey:"2312db30593a720079273808b51811eb691ef66a8dea8b1752f97ed7d2b6f1dd",previewModeEncryptionKey:"88ca0d266b0f391736c57a52d125a1c1ab16cb9b5e21f1ecf156152ef169f3b5"},
+            true,
+            next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"]
+          )
+        } catch (err) {
+          console.error(err)
+          await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+
+          // TODO: better error for DECODE_FAILED?
+          if (err.code === 'DECODE_FAILED') {
+            res.statusCode = 400
+            res.end('Bad Request')
+          } else {
+            // Throw the error to crash the serverless function
+            throw err
+          }
+        }
+      });
+    
+
+/***/ }),
+
 /***/ "IuXR":
 /***/ (function(module, exports) {
 
@@ -817,116 +926,7 @@ const key=_crypto.default.pbkdf2Sync(secret,salt,PBKDF2_ITERATIONS,CIPHER_KEY_LE
 /***/ "Skye":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"version\":3,\"pages404\":true,\"basePath\":\"\",\"redirects\":[{\"source\":\"/:path+/\",\"destination\":\"/:path+\",\"statusCode\":308,\"regex\":\"^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$\"}],\"rewrites\":[],\"headers\":[],\"dynamicRoutes\":[{\"page\":\"/settings/[id]\",\"regex\":\"^/settings/([^/]+?)(?:/)?$\",\"routeKeys\":{\"id\":\"id\"},\"namedRegex\":\"^/settings/(?<id>[^/]+?)(?:/)?$\"}],\"dataRoutes\":[]}");
-
-/***/ }),
-
-/***/ "XVip":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fkL1");
-/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__);
-
-      
-      
-      
-
-      
-    const { processEnv } = __webpack_require__("fXeI")
-    processEnv([])
-  
-      
-      const runtimeConfig = {}
-      
-      const { parse: parseUrl } = __webpack_require__("bzos")
-      const { apiResolver } = __webpack_require__("PCLx")
-      
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("N6Fi")
-  
-
-      
-
-      
-
-      
-
-      
-    const getCustomRouteMatcher = pathMatch(true)
-    const prepareDestination = __webpack_require__("6mnf").default
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          const { parsedDestination } = prepareDestination(
-            rewrite.destination,
-            params,
-            parsedUrl.query,
-            true,
-            ""
-          )
-
-          Object.assign(parsedUrl.query, parsedDestination.query)
-          delete parsedDestination.query
-
-          Object.assign(parsedUrl, parsedDestination)
-
-          if (parsedUrl.pathname === '/api/hello'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-      /* harmony default export */ __webpack_exports__["default"] = (async (req, res) => {
-        try {
-          await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-
-          // We need to trust the dynamic route params from the proxy
-          // to ensure we are using the correct values
-          const trustQuery = req.headers['x-vercel-id']
-          const parsedUrl = handleRewrites(parseUrl(req.url, true))
-
-          
-
-          const params = {}
-
-          const resolver = __webpack_require__("Nxiy")
-          await apiResolver(
-            req,
-            res,
-            Object.assign({}, parsedUrl.query, params ),
-            resolver,
-            {previewModeId:"5edc499699816e96ff400b7a4b797e58",previewModeSigningKey:"f12fcf6cf887495539ef0cd697be3b0f564a2b1e3ea59a388c4982c9d6bcdf47",previewModeEncryptionKey:"cc11ab4fcc7742a86de1f4fbfbd09e1185afd0e40b82dd229c64062010274c1a"},
-            true,
-            next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"]
-          )
-        } catch (err) {
-          console.error(err)
-          await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-
-          // TODO: better error for DECODE_FAILED?
-          if (err.code === 'DECODE_FAILED') {
-            res.statusCode = 400
-            res.end('Bad Request')
-          } else {
-            // Throw the error to crash the serverless function
-            throw err
-          }
-        }
-      });
-    
+module.exports = JSON.parse("{\"version\":3,\"pages404\":true,\"basePath\":\"\",\"redirects\":[{\"source\":\"/:path+/\",\"destination\":\"/:path+\",\"statusCode\":308,\"regex\":\"^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$\"}],\"rewrites\":[],\"headers\":[],\"dynamicRoutes\":[{\"page\":\"/search/[id]\",\"regex\":\"^/search/([^/]+?)(?:/)?$\",\"routeKeys\":{\"id\":\"id\"},\"namedRegex\":\"^/search/(?<id>[^/]+?)(?:/)?$\"},{\"page\":\"/space/[id]\",\"regex\":\"^/space/([^/]+?)(?:/)?$\",\"routeKeys\":{\"id\":\"id\"},\"namedRegex\":\"^/space/(?<id>[^/]+?)(?:/)?$\"}],\"dataRoutes\":[]}");
 
 /***/ }),
 

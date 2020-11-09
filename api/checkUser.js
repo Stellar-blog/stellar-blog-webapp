@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import { Auth, Hub } from 'aws-amplify';
 
 const checkUser = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    attributes : {
+      sub: null
+    }
+  });
 
   useEffect(() => {
     checkUserAuth();
