@@ -45,7 +45,7 @@ export const Main = styled.div`
 `
 
 export const DashboardMain = styled.div`
-  background: #005f65;
+  background: #2C497F;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
@@ -64,6 +64,10 @@ export const Center = styled.div`
 
   ${({ type }) => type === "post" && "height: unset;margin-top: 2rem;"}
   ${({ type }) => type === "dashboard" && "height: unset; text-align:unset;margin-top: 2rem;"}
+
+  .no-posts{
+    width: 100%;
+  }
 `
 
 export const Form = styled.form`
@@ -76,7 +80,7 @@ export const Form = styled.form`
   input, textarea {
     padding: 0.8rem;
     border: transparent;
-    margin: 0.1rem 0;
+    margin: 0.5rem 0;
   }
 
   input:active, textarea:active {

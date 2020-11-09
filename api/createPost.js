@@ -10,6 +10,7 @@ const createPostAPI = (formState, userId) => {
                 userId,
                 userSpaceId: userId,
                 title: formState.title,
+                hashtags: formState.hashtags,
                 status: "PUBLIC",
             }
         },

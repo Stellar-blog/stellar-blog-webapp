@@ -2,6 +2,7 @@ import checkUser from '../../api/checkUser'
 import NewPostBtn from '../NewPostBtn'
 import UserBtn from '../UserBtn'
 import Logo from '../LogoBtn'
+import SearchBar from '../SearchBar'
 import {
     Nav,
     MenuContainer
@@ -14,6 +15,7 @@ const PrivateNavBar = () => {
         <Nav>
             <div className="nav-subcontainer">
                 <Logo href="/dashboard" />
+                <SearchBar />
                 <MenuContainer>
                     <NewPostBtn />
                     <UserBtn user={user}/>

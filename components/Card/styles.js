@@ -39,10 +39,26 @@ export const CardContainer = styled.div`
 
   .name {
     font-weight: bold;
+    margin: 1rem 0;
   }
 
   .content {
     padding: 0.5rem 1rem;
+  }
+
+  .hashtags {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+
+    .tag {
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      background: #22A8B6;
+      height: auto;
+      padding: 0.5rem;
+      border-radius: 2rem;
+    }
   }
 
   .buttonbox{

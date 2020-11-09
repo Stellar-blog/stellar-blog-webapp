@@ -10,6 +10,9 @@ import {
     Form,
     ErrorMessage,
 } from '../../styles'
+import {
+    GuestLoginBtn
+} from './styles'
 import { AWS_AUTH_FORM_TYPE } from '../../constants'
 
 const defaultFormState = {
@@ -26,6 +29,7 @@ function Login() {
     const [step, setStep] = useState(AWS_AUTH_FORM_TYPE.SIGNIN)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
+    const [gestionLoginLoading, setGuestLoginLoading] = useState(false)
 
     useEffect(() => {
         inputRef.current.focus()
@@ -43,7 +47,6 @@ function Login() {
         } catch (e) {
             console.log("sign in error : ", e)
             setError(e)
-        } finally {
             setIsLoading(false)
         }
     }
@@ -55,6 +58,20 @@ function Login() {
             ...state,
             [name]: value
         }))
+    }
+
+    const handleGuestLogin = async (e) => {
+        e.preventDefault()
+        setGuestLoginLoading(true)
+
+        try {
+            await Auth.signIn("spaceduck", "spaceduck123")
+            router.push('/dashboard')
+        } catch (e) {
+            console.log("sign in error : ", e)
+            setError(e)
+            setGuestLoginLoading(false)
+        }
     }
 
     return (
@@ -92,6 +109,13 @@ function Login() {
                             }
                         </button>
                     </Form>
+                    <GuestLoginBtn onClick={handleGuestLogin}>
+                        {
+                            gestionLoginLoading
+                                ? "loading..."
+                                : "Guest Login"
+                        }
+                    </GuestLoginBtn>
                 </Center>
             </Main>
         </>

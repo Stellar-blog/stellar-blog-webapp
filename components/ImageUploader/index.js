@@ -62,7 +62,6 @@ const ImageUploader = ({ handleChange }) => {
 
     const handleDragOver = (e) => {
         e.preventDefault()
-        console.log("drag over")
     }
 
     const deleteImage = (name) => {

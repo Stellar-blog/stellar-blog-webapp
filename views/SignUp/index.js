@@ -108,7 +108,6 @@ function Signup() {
         } catch (e) {
             console.log("confirmation error : ", e)
             setError(e)
-        } finally {
             setIsLoading(false)
         }
     }

@@ -7,7 +7,6 @@ import {
 } from './styles'
 
 function Card({ data }) {
-
     if (!data) return null;
 
     const [imageUrls, setImageUrls] = useState(['/loading.svg'])
@@ -33,9 +32,10 @@ function Card({ data }) {
                     data.title
                 }
             </div>
-            <div className="content">
+            <div className="hashtags">
                 {
-                    data.content
+                    (data.hashtags && Array.isArray(data.hashtags)) &&
+                    data.hashtags.map((tag, i) => <div key={i} className="tag" >{`# ${tag}`}</div>)
                 }
             </div>
             <div className="buttonbox">

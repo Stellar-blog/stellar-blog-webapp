@@ -8,14 +8,18 @@ import Header from '../../components/CommonHeader'
 import NavBar from '../../components/PrivateNav'
 import ImageUploader from '../../components/ImageUploader'
 import ErrorMessage from '../../components/ErrorMessage'
+import HashTags from './HashTags'
 import {
     Center,
-    Form,
     DashboardMain,
 } from '../../styles'
+import {
+    Form
+} from './styles'
 
 const defaultForm = {
     title: '',
+    hashtags: [],
     files: [],
 }
 
@@ -46,7 +50,7 @@ function CreatePost({ userId }) {
             <DashboardMain>
                 <NavBar />
                 <Center type="post">
-                    <Form onSubmit={handleSubmit} type="post">
+                    <Form >
                         <ImageUploader
                             handleChange={handleChange}
                         />
@@ -58,8 +62,11 @@ function CreatePost({ userId }) {
                             value={formState.title}
                             ref={inputRef}
                         />
+                        <HashTags 
+                            handleChange={handleChange}
+                        />
                         <ErrorMessage errors={error} />
-                        <button type="submit">
+                        <button onClick={handleSubmit}>
                             {
                                 isLoading
                                     ? "loading..."

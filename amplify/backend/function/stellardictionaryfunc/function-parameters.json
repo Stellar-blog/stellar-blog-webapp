@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "stellardictionary": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

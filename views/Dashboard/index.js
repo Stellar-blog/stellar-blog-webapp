@@ -1,6 +1,6 @@
 import { withSSRContext } from 'aws-amplify'
 
-import getPosts, { lists } from '../../api/getPosts'
+import getPosts from '../../api/getPosts'
 import CommonHeader from '../../components/CommonHeader'
 import NavBar from '../../components/PrivateNav'
 import Card from '../../components/Card'

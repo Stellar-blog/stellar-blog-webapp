@@ -12,8 +12,8 @@ import {
     FlexBasicContainer
 } from '../../styles'
 
-function Space({ space, isOwner }) { 
-    const { lists, loading } = getPosts()
+function Space({ space, isOwner, username }) { 
+    const { lists, loading } = getPosts(username)
 
     return (
         <>
@@ -63,6 +63,7 @@ export async function getServerSideProps({ params, req, res }) {
             props: {
                 space: space.data.listSpaces.items[0],
                 isOwner,
+                username,
             }
         }
     } catch(e) {

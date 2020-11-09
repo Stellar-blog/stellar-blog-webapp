@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/dict",
+            "lambdaFunction": "stellardictionaryfunc",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/dict"
+        }
+    ],
+    "resourceName": "stellardictionaryfunc",
+    "apiName": "stellardictionaryfunc",
+    "functionArns": [
+        {
+            "lambdaFunction": "stellardictionaryfunc"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-stellawebapp-stellardev-124628-authRole",
+        "unAuthRoleName": "amplify-stellawebapp-stellardev-124628-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "stellardictionaryfunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
