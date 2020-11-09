@@ -70,7 +70,8 @@ type Post @model
     { allow: owner, ownerField: "username" },
     { allow: public, operations: [read] },
     { allow: public, provider: apiKey },
-  ]) {
+  ])
+  @searchable {
   id: ID!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
@@ -79,26 +80,11 @@ type Post @model
   userSpaceId: ID!
   title: String!
   content: String
-  tags: [Tag] @connection(keyName: "tagsByPostId", fields: ["id"])
+  hashtags: [String]
   comments: [Comment] @connection(keyName: "commentsByPostId", fields: ["id"])
   postImages: [PostImage] @connection(keyName: "postImagesByPostId", fields: ["id"])
   likes: [Like] @connection(keyName: "likeByPostId", fields: ["id"])
   status: PostStatus!
-}
-
-type Tag @model
-  @key(name: "tagsByPostId", fields: ["postId", "createdAt"], queryField: "tagsByPostId")
-  @auth(rules: [
-    { allow: owner, ownerField: "username" },
-    { allow: public, operations: [read] },
-    { allow: public, provider: apiKey },
-  ]) {
-  id: ID!
-  createdAt: AWSDateTime!
-  updatedAt: AWSDateTime!
-  tag: String!
-  postId: ID!
-  post: Post @connection(fields: ["postId"])
 }
 
 enum PostStatus {

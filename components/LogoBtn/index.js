@@ -4,12 +4,11 @@ import {
     Logo,
 } from './styles'
 
-function LogoBtn({ href }) {
-    return (
-        <Link href={href} passHref>
-            <Logo>Stellar</Logo>
-        </Link>
-    )
-}
+const LogoBtn = ({ href }) => (
+    <Link href={href} passHref>
+        <Logo>Stellar</Logo>
+    </Link>
+)
+
 
 export default LogoBtn

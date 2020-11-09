@@ -67,6 +67,7 @@ export const listSpaces = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
           nextToken
@@ -163,6 +164,7 @@ export const getSpace = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
         }
@@ -178,11 +180,9 @@ export const getSpace = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -271,6 +271,7 @@ export const spaceByUserId = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
           nextToken
@@ -349,6 +350,7 @@ export const getFollower = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
           nextToken
@@ -536,6 +538,7 @@ export const getLike = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -545,17 +548,6 @@ export const getLike = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -614,11 +606,9 @@ export const listLikes = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -666,11 +656,9 @@ export const likeByPostId = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -718,11 +706,9 @@ export const likeByUserId = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -753,6 +739,7 @@ export const listPosts = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -762,17 +749,6 @@ export const listPosts = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -820,6 +796,7 @@ export const getPost = /* GraphQL */ `
       userSpaceId
       title
       content
+      hashtags
       status
       likes {
         items {
@@ -838,30 +815,9 @@ export const getPost = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          createdAt
-          updatedAt
-          tag
-          postId
-          post {
-            id
-            createdAt
-            updatedAt
-            username
-            userId
-            userSpaceId
-            title
-            content
-            status
-          }
-          username
         }
         nextToken
       }
@@ -922,6 +878,7 @@ export const postsByStatus = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -931,17 +888,6 @@ export const postsByStatus = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -1004,6 +950,7 @@ export const postsByUserId = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -1013,17 +960,6 @@ export const postsByUserId = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -1060,15 +996,20 @@ export const postsByUserId = /* GraphQL */ `
     }
   }
 `;
-export const getTag = /* GraphQL */ `
-  query GetTag($id: ID!) {
-    getTag(id: $id) {
-      id
-      createdAt
-      updatedAt
-      tag
-      postId
-      post {
+export const searchPosts = /* GraphQL */ `
+  query SearchPosts(
+    $filter: SearchablePostFilterInput
+    $sort: SearchablePostSortInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    searchPosts(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
         id
         createdAt
         updatedAt
@@ -1077,6 +1018,7 @@ export const getTag = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -1086,17 +1028,6 @@ export const getTag = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -1129,101 +1060,8 @@ export const getTag = /* GraphQL */ `
           nextToken
         }
       }
-      username
-    }
-  }
-`;
-export const listTags = /* GraphQL */ `
-  query ListTags(
-    $filter: ModelTagFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        createdAt
-        updatedAt
-        tag
-        postId
-        post {
-          id
-          createdAt
-          updatedAt
-          username
-          userId
-          userSpaceId
-          title
-          content
-          status
-          likes {
-            nextToken
-          }
-          tags {
-            nextToken
-          }
-          postImages {
-            nextToken
-          }
-          comments {
-            nextToken
-          }
-        }
-        username
-      }
       nextToken
-    }
-  }
-`;
-export const tagsByPostId = /* GraphQL */ `
-  query TagsByPostId(
-    $postId: ID
-    $createdAt: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelTagFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    tagsByPostId(
-      postId: $postId
-      createdAt: $createdAt
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        createdAt
-        updatedAt
-        tag
-        postId
-        post {
-          id
-          createdAt
-          updatedAt
-          username
-          userId
-          userSpaceId
-          title
-          content
-          status
-          likes {
-            nextToken
-          }
-          tags {
-            nextToken
-          }
-          postImages {
-            nextToken
-          }
-          comments {
-            nextToken
-          }
-        }
-        username
-      }
-      nextToken
+      total
     }
   }
 `;

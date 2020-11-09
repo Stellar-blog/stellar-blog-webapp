@@ -1,20 +1,19 @@
 import { useEffect, useState } from 'react'
 import { Storage } from 'aws-amplify'
 
+import ImageLoader from './ImageLoader'
 import {
     CardContainer,
-    ImageLoader
-} from '../../pages/styles'
+} from './styles'
 
 function Card({ data }) {
+    if (!data) return null;
 
-    const [imageUrl, setImageUrl] = useState('/loading.svg')
+    const [imageUrls, setImageUrls] = useState(['/loading.svg'])
 
-    useEffect(async () => {
-        //Currently support only 1 phone per post
-        //Will work on to support multiple photos
-        const url = await Storage.get(data.postImages.items[0].desktopKey)
-        setImageUrl(url)
+    useEffect(() => {
+        Promise.all(data.postImages.items.map((image) => Storage.get(image.desktopKey)))
+        .then(urls => setImageUrls(urls))
     }, [])
 
     return (
@@ -27,19 +26,16 @@ function Card({ data }) {
                     Follow
                 </div>
             </div>
-            <ImageLoader
-                src={imageUrl}
-                alt={data.title}
-                height={data.postImages.items[0].size}
-            />
+            <ImageLoader imageUrls={imageUrls} data={data} />
             <div className="name">
                 {
                     data.title
                 }
             </div>
-            <div className="content">
+            <div className="hashtags">
                 {
-                    data.content
+                    (data.hashtags && Array.isArray(data.hashtags)) &&
+                    data.hashtags.map((tag, i) => <div key={i} className="tag" >{`# ${tag}`}</div>)
                 }
             </div>
             <div className="buttonbox">
