@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const Image = styled.img`
   width: 540px;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -91,5 +95,11 @@ export const CardContainer = styled.div`
       background-repeat: no-repeat;
       cursor: pointer;
     }
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    margin: 0 0 5px 0;
+    border-radius: unset;
   }
 `
