@@ -27,6 +27,10 @@ export const NoPostsContainer = styled.section`
     h2{
         color: #5f5f5f;
     }
+
+    @media only screen and (max-width: 600px) {
+        border-radius: 0;
+    }
 `
 
 export const SpaceMenuContainer = styled.section`

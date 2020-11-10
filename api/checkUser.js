@@ -4,8 +4,9 @@ import { Auth, Hub } from 'aws-amplify';
 const checkUser = () => {
   const [user, setUser] = useState({
     attributes : {
-      sub: null
-    }
+      sub: null,
+    },
+    username : null
   });
 
   useEffect(() => {

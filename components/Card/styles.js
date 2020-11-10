@@ -23,10 +23,16 @@ export const CardContainer = styled.div`
     padding: 0 1rem;
   }
 
-  .username{
-    padding: 0.5rem 1rem;
+  .first-row{
+    padding: 0.5rem 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    .user-info{
+      display: flex;
+      align-items: center;
+    }
 
     .followButton{
       font-family: 'Roboto',sans-serif;
@@ -97,9 +103,60 @@ export const CardContainer = styled.div`
     }
   }
 
+  .not-available{
+    color: #c9c9c9;
+  }
+
   @media only screen and (max-width: 600px) {
     width: 100%;
     margin: 0 0 5px 0;
     border-radius: unset;
+  }
+`
+
+export const DropDownContainer = styled.div`
+  position: relative;
+  display: inline-block;
+
+  .no-show {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  img {
+    cursor : pointer;
+  }
+`
+
+export const DropDownMenus = styled.div`
+  position: absolute;
+  background-color: #f1f1f1;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: -60px;
+  padding: 0!important;
+
+  a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 1rem;
+    }
+  }
+
+  a:hover {
+    background-color: #ddd;
   }
 `

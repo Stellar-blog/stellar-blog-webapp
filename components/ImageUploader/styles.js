@@ -64,7 +64,7 @@ export const DropZoneContainer = styled.div`
   cursor: pointer;
 
   @media only screen and (max-width: 600px) {
-    width: 100%;
+    width: 98%;
   }
 `
 
