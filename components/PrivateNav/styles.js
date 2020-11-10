@@ -21,7 +21,7 @@ export const Nav = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    height: 10vh;
+    height: 7vh;
     background: #2C497F;
 
     .nav-subcontainer{
@@ -48,8 +48,8 @@ export const ImageContainer = styled.img`
   cursor: pointer;
 
   @media only screen and (max-width: 600px) {
-    width: 55px;
-    height: 55px;
+    width: 25px;
+    height: 25px;
     padding-top: 4px;
   }
 
@@ -105,7 +105,7 @@ export const DropDownMenus = styled.div`
     position: fixed;
     width: 100%;
     left: 0;
-    top: 10vh;
-    height: 90vh;
+    top: 7vh;
+    height: 93vh;
   }
 `
