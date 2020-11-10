@@ -62,6 +62,10 @@ export const DropZoneContainer = styled.div`
   text-align: center;
   color: white;
   cursor: pointer;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const Clickable = styled.input`

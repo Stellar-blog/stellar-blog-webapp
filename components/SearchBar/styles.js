@@ -5,7 +5,6 @@ export const SearchBarContainer = styled.form`
     position: relative;
 
     .input-container{
-
         display: flex;
         align-items: center;
 
@@ -29,6 +28,18 @@ export const SearchBarContainer = styled.form`
             height: 25px;
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        width: 11rem;
+
+        .input-container{
+            input {
+                width: 11rem;
+                margin: 0;
+            }
+
+        }
+    }
 `
 
 export const SuggestionContainer = styled.section`
@@ -41,6 +52,11 @@ export const SuggestionContainer = styled.section`
     z-index: 1;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    @media only screen and (max-width: 600px) {
+        margin: 2px 0 0 0;
+        width: 11rem;
+    }
 `
 
 export const Item = styled.div`

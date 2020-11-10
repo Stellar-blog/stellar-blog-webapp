@@ -46,12 +46,23 @@ export const AccountContainer = styled.div`
     .content:last-child{
         border-bottom: none;
     }
+
+    @media only screen and (max-width: 600px) {
+        margin: 0; 
+        width: 100%;
+        border-radius: 0;
+        height: 90vh;
+    }
 `
 
 export const MySettingsContainer = styled.section`
     flex-direction: column;
     align-items: center;
     margin-bottom: 10rem;
+
+    @media only screen and (max-width: 600px) {
+        margin: 0; 
+    }
 `
 
 export const SettingsMenuContainer = styled.section`

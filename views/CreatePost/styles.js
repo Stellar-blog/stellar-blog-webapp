@@ -15,7 +15,6 @@ export const DisplayTagsContainer = styled.section`
 `
 
 export const TagContainer = styled.div`
-
     margin: 0.5rem 1rem 0.5rem 0;
     background: #22A8B6;
     height: auto;
@@ -71,5 +70,10 @@ export const Form = styled.section`
 
   button:active, button:hover, button:focus {
     outline: 2px solid #7f5281;
+  }
+
+  @media only screen and (max-width: 600px) {
+    min-width: unset;
+    width: 95%;
   }
 `

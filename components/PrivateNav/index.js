@@ -1,8 +1,11 @@
 import checkUser from '../../api/checkUser'
-import NewPostBtn from '../NewPostBtn'
-import UserBtn from '../UserBtn'
+import useResize from '../../hooks/useResize'
+
 import Logo from '../LogoBtn'
 import SearchBar from '../SearchBar'
+import NewPostBtn from './NewPostBtn'
+import UserBtn from './UserBtn'
+import BarBtn from './BarBtn'
 import {
     Nav,
     MenuContainer
@@ -10,15 +13,26 @@ import {
 
 const PrivateNavBar = () => {
     const user = checkUser()
+    const isMobile = useResize()
 
     return (
         <Nav>
             <div className="nav-subcontainer">
                 <Logo href="/dashboard" />
                 <SearchBar />
-                <MenuContainer>
-                    <NewPostBtn />
-                    <UserBtn user={user}/>
+                <MenuContainer isMobile={isMobile}>
+                    {
+                        !isMobile
+                        ?
+                        (
+                            <>
+                                <NewPostBtn />
+                                <UserBtn user={user}/>
+                            </>
+                        )
+                        : <BarBtn user={user}/>
+                    }
+
                 </MenuContainer>
             </div>
         </Nav>
