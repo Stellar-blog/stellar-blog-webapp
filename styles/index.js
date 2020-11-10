@@ -72,6 +72,11 @@ export const Center = styled.div`
     max-width: 550px;
     width: 550px;
   }
+
+  @media only screen and (max-width: 600px) {
+   margin: 0;
+   max-width: unset;
+  }
 `
 
 export const Form = styled.form`
@@ -118,6 +123,10 @@ export const Form = styled.form`
 
   button:active, button:hover, button:focus {
     outline: 2px solid #7f5281;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 95%;
   }
 `
 
@@ -173,5 +182,9 @@ export const FlexBasicContainer = styled.div`
           display: none;
           margin-left:unset;
         }
+    }
+
+    @media only screen and (max-width: 600px) {
+      margin: 0;
     }
 `

@@ -4,6 +4,10 @@ export const MyPostsContainer = styled.section`
     flex-direction: column;
     align-items: center;
     margin-bottom: 10rem;
+
+    @media only screen and (max-width: 600px) {
+        margin-bottom: 0;
+    }
 `
 
 export const NoPostsContainer = styled.section`
