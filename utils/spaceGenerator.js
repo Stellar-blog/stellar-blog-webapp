@@ -19,9 +19,9 @@ function spaceGenerator(userSub) {
                     language: "EN",
                 }
             },
+            // authMode: "AMAZON_COGNITO_USER_POOLS"
         })
 
-        console.log("space : ", space)
         setRes(space)
     }, [])
 

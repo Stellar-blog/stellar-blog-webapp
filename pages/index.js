@@ -7,7 +7,7 @@ import {
 	Center,
 	Button,
 	Typography,
-} from './styles'
+} from '../styles'
 import { AWS_AUTH_FORM_TYPE } from '../constants'
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
 						Stellar is where you can create your own space and put whatever you want.
 					</Typography>
 					<Link href="/login" passHref>
-						<Button>
+						<Button className="get-started">
 							Get Started
 						</Button>
 					</Link>

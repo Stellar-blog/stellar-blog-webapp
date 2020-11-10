@@ -1,0 +1,5 @@
+{
+    "tableName": "stellardictionary",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

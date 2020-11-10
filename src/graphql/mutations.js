@@ -91,6 +91,7 @@ export const createSpace = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
         }
@@ -106,11 +107,9 @@ export const createSpace = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -215,6 +214,7 @@ export const updateSpace = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
         }
@@ -230,11 +230,9 @@ export const updateSpace = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -339,6 +337,7 @@ export const deleteSpace = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
         }
@@ -354,11 +353,9 @@ export const deleteSpace = /* GraphQL */ `
           userSpaceId
           title
           content
+          hashtags
           status
           likes {
-            nextToken
-          }
-          tags {
             nextToken
           }
           postImages {
@@ -445,6 +442,7 @@ export const createFollower = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
           nextToken
@@ -525,6 +523,7 @@ export const updateFollower = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
           nextToken
@@ -605,6 +604,7 @@ export const deleteFollower = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
           nextToken
@@ -634,6 +634,7 @@ export const createLike = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -643,17 +644,6 @@ export const createLike = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -710,6 +700,7 @@ export const updateLike = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -719,17 +710,6 @@ export const updateLike = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -786,6 +766,7 @@ export const deleteLike = /* GraphQL */ `
         userSpaceId
         title
         content
+        hashtags
         status
         likes {
           items {
@@ -795,17 +776,6 @@ export const deleteLike = /* GraphQL */ `
             postId
             username
             userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
           }
           nextToken
         }
@@ -855,6 +825,7 @@ export const createPost = /* GraphQL */ `
       userSpaceId
       title
       content
+      hashtags
       status
       likes {
         items {
@@ -873,30 +844,9 @@ export const createPost = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          createdAt
-          updatedAt
-          tag
-          postId
-          post {
-            id
-            createdAt
-            updatedAt
-            username
-            userId
-            userSpaceId
-            title
-            content
-            status
-          }
-          username
         }
         nextToken
       }
@@ -945,6 +895,7 @@ export const updatePost = /* GraphQL */ `
       userSpaceId
       title
       content
+      hashtags
       status
       likes {
         items {
@@ -963,30 +914,9 @@ export const updatePost = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          createdAt
-          updatedAt
-          tag
-          postId
-          post {
-            id
-            createdAt
-            updatedAt
-            username
-            userId
-            userSpaceId
-            title
-            content
-            status
-          }
-          username
         }
         nextToken
       }
@@ -1035,6 +965,7 @@ export const deletePost = /* GraphQL */ `
       userSpaceId
       title
       content
+      hashtags
       status
       likes {
         items {
@@ -1053,30 +984,9 @@ export const deletePost = /* GraphQL */ `
             userSpaceId
             title
             content
+            hashtags
             status
           }
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          createdAt
-          updatedAt
-          tag
-          postId
-          post {
-            id
-            createdAt
-            updatedAt
-            username
-            userId
-            userSpaceId
-            title
-            content
-            status
-          }
-          username
         }
         nextToken
       }
@@ -1108,234 +1018,6 @@ export const deletePost = /* GraphQL */ `
         }
         nextToken
       }
-    }
-  }
-`;
-export const createTag = /* GraphQL */ `
-  mutation CreateTag(
-    $input: CreateTagInput!
-    $condition: ModelTagConditionInput
-  ) {
-    createTag(input: $input, condition: $condition) {
-      id
-      createdAt
-      updatedAt
-      tag
-      postId
-      post {
-        id
-        createdAt
-        updatedAt
-        username
-        userId
-        userSpaceId
-        title
-        content
-        status
-        likes {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
-          }
-          nextToken
-        }
-        postImages {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-            desktopKey
-            mobileKey
-            thumbnailKey
-            size
-            metadata
-          }
-          nextToken
-        }
-        comments {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-            message
-          }
-          nextToken
-        }
-      }
-      username
-    }
-  }
-`;
-export const updateTag = /* GraphQL */ `
-  mutation UpdateTag(
-    $input: UpdateTagInput!
-    $condition: ModelTagConditionInput
-  ) {
-    updateTag(input: $input, condition: $condition) {
-      id
-      createdAt
-      updatedAt
-      tag
-      postId
-      post {
-        id
-        createdAt
-        updatedAt
-        username
-        userId
-        userSpaceId
-        title
-        content
-        status
-        likes {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
-          }
-          nextToken
-        }
-        postImages {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-            desktopKey
-            mobileKey
-            thumbnailKey
-            size
-            metadata
-          }
-          nextToken
-        }
-        comments {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-            message
-          }
-          nextToken
-        }
-      }
-      username
-    }
-  }
-`;
-export const deleteTag = /* GraphQL */ `
-  mutation DeleteTag(
-    $input: DeleteTagInput!
-    $condition: ModelTagConditionInput
-  ) {
-    deleteTag(input: $input, condition: $condition) {
-      id
-      createdAt
-      updatedAt
-      tag
-      postId
-      post {
-        id
-        createdAt
-        updatedAt
-        username
-        userId
-        userSpaceId
-        title
-        content
-        status
-        likes {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-          }
-          nextToken
-        }
-        tags {
-          items {
-            id
-            createdAt
-            updatedAt
-            tag
-            postId
-            username
-          }
-          nextToken
-        }
-        postImages {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-            desktopKey
-            mobileKey
-            thumbnailKey
-            size
-            metadata
-          }
-          nextToken
-        }
-        comments {
-          items {
-            id
-            createdAt
-            updatedAt
-            postId
-            username
-            userId
-            message
-          }
-          nextToken
-        }
-      }
-      username
     }
   }
 `;
