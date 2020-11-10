@@ -65,7 +65,7 @@ function Login() {
         setGuestLoginLoading(true)
 
         try {
-            await Auth.signIn("spaceduck", "spaceduck123") //GUEST_ID // GUEST_PW
+            await Auth.signIn(process.env.NEXT_PUBLIC_GUEST_ID, process.env.NEXT_PUBLIC_GUEST_PW)
             router.push('/dashboard')
         } catch (e) {
             console.log("sign in error : ", e)
