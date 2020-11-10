@@ -19,15 +19,15 @@ export default function Home() {
 			</Head>
 			<Main>
 				<NavBar authType={AWS_AUTH_FORM_TYPE.NOTSIGNEDIN} />
-				<Center>
+				<Center className="login-page">
 					<Typography size="big">
 						Stellar, your space
 					</Typography>
 					<Typography size="medium">
-						Stellar is where you can create your own space and put whatever you want.
+						Stellar is where you can create your own space
 					</Typography>
 					<Link href="/login" passHref>
-						<Button className="get-started">
+						<Button>
 							Get Started
 						</Button>
 					</Link>

@@ -58,7 +58,7 @@ export const Center = styled.div`
   text-align: center;
 
   height: 90vh;
-  max-width: 450px;
+  max-width: 550px;
   margin: auto;
 
   ${({ type }) => type === "post" && "height: unset;margin-top: 2rem;"}
@@ -66,6 +66,11 @@ export const Center = styled.div`
 
   .no-posts{
     width: 100%;
+  }
+
+  .login-page {
+    max-width: 550px;
+    width: 550px;
   }
 `
 
