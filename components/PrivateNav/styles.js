@@ -15,6 +15,11 @@ export const Nav = styled.div`
     padding: 0 60px;
   }
 
+  .logo-search-container{
+    display: flex;
+    align-items: center;
+  }
+
   @media only screen and (max-width: 600px) {
     height: 10vh;
     background: #2C497F;

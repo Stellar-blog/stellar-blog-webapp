@@ -18,8 +18,10 @@ const PrivateNavBar = () => {
     return (
         <Nav>
             <div className="nav-subcontainer">
-                <Logo href="/dashboard" />
-                <SearchBar />
+                <div className="logo-search-container">
+                    <Logo href="/dashboard" />
+                    <SearchBar />
+                </div>
                 <MenuContainer isMobile={isMobile}>
                     {
                         !isMobile
