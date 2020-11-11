@@ -3,22 +3,23 @@
 
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
-## Front-end development tools
+## Development tools
+### Front-end
 - HTML 5, CSS 3, Javascript (ES6)
 - Next.js (React.js)
 - Styled Components
 
-## Back-end development tools
+### Back-end
 - Node.js (v12)
 - Express.js
 - GraphQL
 
-## Unit-test tools
+### Unit-test
 - Jest
 - Enzyme
 - @testing-library
 
-## AWS services
+### AWS services
 - AWS Amplify
 - AWS Appsync
 - AWS DynamoDB
@@ -27,6 +28,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - AWS Lambda
 - AWS Route 53
 - AWs CloudFront
+- AWS ElasticSearch
 
 ## Core features
 ### Integrated with GraphQL 
@@ -42,7 +44,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [ ] redirect unauthenticated users (WIP)
 
 ### Photo upload flow
-- [x] let user upload photos up to 3
+- [x] let user upload up to 3 photos at once
 - [x] let user drag and drop their photos
 - [x] let user search a photo with their local OS
 
@@ -53,36 +55,60 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [x] let user see a list of posts the user uploaded
 - [x] let user see a list of options for settings
 - [x] let user delete their post
-- [ ] let user edit their post
+- [ ] let user edit their post (WIP)
 - [ ] let user follow other bloggers (WIP)
 - [ ] let user like other posts (WIP)
 - [ ] let user comment on a post (WIP)
 
-### Search by hashtag flow
+### Search flow by hashtag flow
 - [x] let user search posts by hashtag
-- [x] let user see a list of autosuggestions 
+- [x] let user see a list of auto-suggestions 
 
 ### CICD flow built with Amplify & Github
 - [x] have multiple environments; master/QA/Prod
+- [x] master branch deployed to dev.stellar-blog.com
+- [x] QA branch deployed to qa.stellar-blog.com
+- [x] Prod branch deployed to www.stellar-blog.com
 
 ![](wiki/CICD_Process.png)
 
 ### Mobile viewport support
+- [x] support desktop viewport (window width greater than 600px)
+- [x] support mobile  viewport (window width less than 600px)
 
 ### Browser compaitibility
+- [x] support Chrome
+- [x] support Firefox
+- [x] support Safari
+- [x] support Edge
 
-### Performance Optimization
+### Performance optimization
+- [x] image rendering with a loader 
 
 ### Unit-test result
+- [ ] set up a testing environment with Jest (WIP)
 
-### Accessbility
+### Web accessbility (with Keyboard)
+- [x] let user sign up
+- [x] let user log in
+- [ ] let user browse through nav menus (WIP)
+- [ ] let user upload a photo (WIP)
+- [x] let user add hashtags 
+- [x] let user submit a post
+- [x] let user search posts by hashtags
+- [ ] let user browse a list of auto-suggestions (WIP)
+
+### Internationalization
+- [ ] redirect based on user's location (WIP)
+- [x] support English
+- [ ] support Korean (WIP)
 
 ### To-do list
+- [ ] refactor with Typescript
 - [ ] format the code with ESLint, Airbnb Style Guide, and Prettier
 
 ## Meta Data
 Jong-Ho (James) Kim
-
 - [Github](https://github.com/april9288) - Github page
 - [Linkedin](http://www.linkedin.com/in/james-kim-dev) - Linkedin page
 - [Medium](https://medium.com/@april9288) - Medium blog
