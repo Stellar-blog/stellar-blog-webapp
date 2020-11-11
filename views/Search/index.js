@@ -13,7 +13,7 @@ import {
 } from '../../styles'
 
 function Search() { 
-    const user = checkUser()
+    const { user } = checkUser()
     const router = useRouter()
     let term = router.query.id
     if (typeof term === "string") {
@@ -24,7 +24,6 @@ function Search() {
         lists,
         isLoading,
     } = searchPosts(term)
-
     return (
         <>
             <Header />

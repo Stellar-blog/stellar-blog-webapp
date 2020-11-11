@@ -12,7 +12,7 @@ import {
 } from './styles'
 
 const PrivateNavBar = () => {
-    const user = checkUser()
+    const { user } = checkUser()
     const isMobile = useResize()
 
     return (

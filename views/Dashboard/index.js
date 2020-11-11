@@ -12,7 +12,7 @@ import {
 function Dashboard() {
 
     const { lists } = getPosts()
-    const user = checkUser()
+    const { user } = checkUser()
 
     return (
         <>
