@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { withRouter } from 'next/router'
 
 import checkUser from '../../api/checkUser'
@@ -14,14 +14,12 @@ import {
 } from '../../styles'
 
 function Space({ router }) { 
-    const user = checkUser()
+    const { user } = checkUser()
     const { lists, loading  } = getPosts(router.query.id)
     const { space, error } = getSpace(router.query.id)
-    
+
     useEffect(()=> {
-        if (error) {
-            router.push('/dashboard')
-        }
+        if (error) router.push('/dashboard')
     }, [error])
 
     return (

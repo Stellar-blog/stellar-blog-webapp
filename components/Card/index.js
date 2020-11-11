@@ -8,7 +8,7 @@ import {
 } from './styles'
 
 function Card({ data, user }) {
-    if (!data) return null;
+    if (!data || !user) return null;
 
     const [imageUrls, setImageUrls] = useState(['/loading.svg'])
     const [isOnwer, setIsOwner] = useState(false)

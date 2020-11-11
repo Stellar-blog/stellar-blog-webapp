@@ -1,28 +1,26 @@
 import { useState, useEffect } from 'react';
-import { Auth, Hub } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
 
 const checkUser = () => {
-  const [user, setUser] = useState({
-    attributes : {
-      sub: null,
-    },
-    username : null
-  });
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
-    checkUserAuth();
-    const unsubscribe = Hub.listen('auth', () => checkUserAuth());
-    return () => unsubscribe();
-  }, [])
-
-  async function checkUserAuth() {
+  useEffect(async () => {
+    setLoading(true)
     try {
-      const signedInUser = await Auth.currentAuthenticatedUser();
-      setUser(signedInUser);
-    } catch (err) { setUser(null); };
-  }
+      const signedInUser = await Auth.currentAuthenticatedUser()
+      setUser(signedInUser)
+    } catch (err) { 
+      setUser(null)
+    } finally {
+      setLoading(false)
+    }
+  }, [])
   
-  return user;
+  return {
+    user,
+    loading
+  }
 }
 
 export default checkUser

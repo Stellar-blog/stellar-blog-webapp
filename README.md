@@ -3,6 +3,9 @@
 
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
+## Preview
+
+
 ## Development tools
 ### Front-end
 - HTML 5, CSS 3, Javascript (ES6)
@@ -32,11 +35,12 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
 ## Core features
 ### Integrated with GraphQL 
-- [x] generated fully working APIs from GraphQL schema
+- [x] generate fully working APIs from GraphQL schema
+- [Click it to see GraphQL schema](https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/amplify/backend/api/stellagraphqlapi/schema.graphql)
 
 ### Authentication flow built with AWS Cognito
 - [x] let user sign up with their email
-- [x] Email verification
+- [x] verify user by email
 - [x] let user log in with their username
 - [x] let user log out
 - [ ] let user change their password (WIP)
@@ -44,6 +48,8 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [ ] redirect unauthenticated users (WIP)
 
 ### Photo upload flow
+- [x] store user-uploaded photos on AWS S3
+- [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
 - [x] let user upload up to 3 photos at once
 - [x] let user drag and drop their photos
 - [x] let user search a photo with their local OS
@@ -60,15 +66,16 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [ ] let user like other posts (WIP)
 - [ ] let user comment on a post (WIP)
 
-### Search flow by hashtag flow
+### Search flow by hashtag
 - [x] let user search posts by hashtag
 - [x] let user see a list of auto-suggestions 
 
 ### CICD flow built with Amplify & Github
-- [x] have multiple environments; master/QA/Prod
-- [x] master branch deployed to dev.stellar-blog.com
-- [x] QA branch deployed to qa.stellar-blog.com
-- [x] Prod branch deployed to www.stellar-blog.com
+- [x] implement multiple environments; Master/QA/Prod
+- [x] deploy Master branch to https://dev.stellar-blog.com
+- [x] deployed QA branch to https://qa.stellar-blog.com
+- [x] deployed Prod branch to https://www.stellar-blog.com
+- [x] get each domain SSL certificed by AWS Certificate Manager to enable HTTPS
 
 ![](wiki/CICD_Process.png)
 
