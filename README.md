@@ -4,7 +4,7 @@
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
 ## Preview
-
+![](wiki/preview-login.gif)
 
 ## Development tools
 ### Front-end
