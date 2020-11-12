@@ -4,7 +4,7 @@
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
 ## Preview
-![](wiki/preview-login.gif)
+![](wiki/preview-login480.gif)
 
 ## Development tools
 ### Front-end
@@ -64,7 +64,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [ ] redirect unauthenticated users (WIP)
 
 ### Photo upload flow
-> Implemented a draggable & dropable UI for better user experience
+> Implemented a draggable & droppable UI for better user experience
 
 - [x] let user upload up to 3 photos at once
 - [x] let user drag and drop their photos
@@ -72,13 +72,15 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [x] store user-uploaded photos on AWS S3
 - [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
 
-![](wiki/preview-photo-upload.gif)
+![](wiki/preview-photo-upload480.gif)
 
 ### Search flow by hashtag
 > Implemented an auto-suggestion system with a Trie strucutre for faster performance and better user experience.
 
 - [x] let user search posts by hashtag
 - [x] let user see a list of auto-suggestions 
+
+![](wiki/preview-search480.gif)
 
 ### CICD flow built with Amplify & Github
 > Implemented multi-environments; Master/QA/Prod, and had each domain SSL certified by AWS Certificate Manager to enable HTTPS
