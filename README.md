@@ -72,7 +72,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [x] store user-uploaded photos on AWS S3
 - [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
 
-![](wiki/preview-photo-upload.png)
+![](wiki/preview-photo-upload.gif)
 
 ### Search flow by hashtag
 > Implemented an auto-suggestion system with a Trie strucutre for faster performance and better user experience.
