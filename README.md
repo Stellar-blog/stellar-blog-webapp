@@ -6,7 +6,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Preview of stellar-blog.com
+      Preview of stellar-blog.com :star2:
     </b>
   </summary>
 <br>
@@ -16,7 +16,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Overview diagram of the whole system
+      Overview diagram of the whole system :star2:
     </b>
   </summary>
 <br>
@@ -90,7 +90,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Preview of Photo upload flow
+      Preview of Photo upload flow :star2:
     </b>
   </summary>
 <br>
@@ -100,7 +100,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Sequence diagram
+      Sequence diagram :star2:
     </b>
   </summary>
 <br>
@@ -116,11 +116,21 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Preview of Search flow
+      Preview of Search flow :star2:
     </b>
   </summary>
 <br>
 <img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/preview-search480.gif" alt="preview-search480" />
+</details>
+
+<details>
+  <summary>
+    <b>
+      Sequence diagram (Auto-suggestion flow) :star2:
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/Autocomplete_Process.png" alt="Autocomplete_Process" />
 </details>
 
 ### CI/CD pipeline built with Amplify & Github
@@ -133,7 +143,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Overview diagram of CI/CD pipeline
+      Overview diagram of CI/CD pipeline :star2:
     </b>
   </summary>
 <br>
