@@ -3,8 +3,25 @@
 
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
-## Preview
-![](wiki/preview-login480.gif)
+<details>
+  <summary>
+    <b>
+      Preview of stellar-blog.com
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/preview-login480.gif" alt="preview" />
+</details>
+
+<details>
+  <summary>
+    <b>
+      Overview diagram of the whole system
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/General_Process.png" alt="General_Process" />
+</details>
 
 ## Development tools
 ### Front-end
@@ -39,8 +56,6 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
 - [Click it to see GraphQL schema](https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/amplify/backend/api/stellagraphqlapi/schema.graphql)
 
-![](wiki/General_Process.png)
-
 ### Blog system
 - [x] let user submit their post
 - [x] let user add hashtags on their post
@@ -72,24 +87,58 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [x] store user-uploaded photos on AWS S3
 - [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
 
-![](wiki/preview-photo-upload480.gif)
+<details>
+  <summary>
+    <b>
+      Preview of Photo upload flow
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/preview-photo-upload480.gif" alt="preview-photo-upload480" />
+</details>
+
+<details>
+  <summary>
+    <b>
+      Sequence diagram
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/seq-diagram-photo-upload.gif" alt="seq-diagram-photo-upload" />
+</details>
 
 ### Search flow by hashtag
-> Implemented an auto-suggestion system with a Trie strucutre for faster performance and better user experience.
+> Implemented an auto-suggestion system with a Trie structure for faster performance and better user experience.
 
 - [x] let user search posts by hashtag
 - [x] let user see a list of auto-suggestions 
 
-![](wiki/preview-search480.gif)
+<details>
+  <summary>
+    <b>
+      Preview of Search flow
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/preview-search480.gif" alt="preview-search480" />
+</details>
 
-### CICD flow built with Amplify & Github
+### CI/CD pipeline built with Amplify & Github
 > Implemented multi-environments; Master/QA/Prod, and had each domain SSL certified by AWS Certificate Manager to enable HTTPS
 
 - [x] deploy Master branch to https://dev.stellar-blog.com
 - [x] deployed QA branch to https://qa.stellar-blog.com
 - [x] deployed Prod branch to https://www.stellar-blog.com
 
-![](wiki/CICD_Process.png)
+<details>
+  <summary>
+    <b>
+      Overview diagram of CI/CD pipeline
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/CICD_Process.png" alt="CICD_Process" />
+</details>
 
 ### Performance optimization
 - [x] image rendering with a loader 
