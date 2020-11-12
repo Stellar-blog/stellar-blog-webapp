@@ -35,8 +35,11 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
 ## Core features
 ### Integrated with GraphQL 
-- [x] generate fully working APIs from GraphQL schema
+> Generated fully working APIs from GraphQL schema
+
 - [Click it to see GraphQL schema](https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/amplify/backend/api/stellagraphqlapi/schema.graphql)
+
+![](wiki/General_Process.png)
 
 ### Authentication flow built with AWS Cognito
 - [x] let user sign up with their email
