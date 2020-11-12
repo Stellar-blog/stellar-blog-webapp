@@ -34,28 +34,12 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - AWS ElasticSearch
 
 ## Core features
-### Integrated with GraphQL 
+### Integrated with GraphQL and Rest API
 > Generated fully working APIs from GraphQL schema
 
 - [Click it to see GraphQL schema](https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/amplify/backend/api/stellagraphqlapi/schema.graphql)
 
 ![](wiki/General_Process.png)
-
-### Authentication flow built with AWS Cognito
-- [x] let user sign up with their email
-- [x] verify user by email
-- [x] let user log in with their username
-- [x] let user log out
-- [ ] let user change their password (WIP)
-- [ ] let user delete their account (WIP)
-- [ ] redirect unauthenticated users (WIP)
-
-### Photo upload flow
-- [x] store user-uploaded photos on AWS S3
-- [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
-- [x] let user upload up to 3 photos at once
-- [x] let user drag and drop their photos
-- [x] let user search a photo with their local OS
 
 ### Blog system
 - [x] let user submit their post
@@ -69,18 +53,44 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [ ] let user like other posts (WIP)
 - [ ] let user comment on a post (WIP)
 
+### Authentication flow built with AWS Cognito
+
+- [x] let user sign up with their email
+- [x] verify user by email
+- [x] let user log in with their username
+- [x] let user log out
+- [ ] let user change their password (WIP)
+- [ ] let user delete their account (WIP)
+- [ ] redirect unauthenticated users (WIP)
+
+### Photo upload flow
+> Implemented a draggable & dropable UI for better user experience
+
+- [x] let user upload up to 3 photos at once
+- [x] let user drag and drop their photos
+- [x] let user search a photo with their local OS
+- [x] store user-uploaded photos on AWS S3
+- [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
+
+![](wiki/preview-photo-upload.png)
+
 ### Search flow by hashtag
+> Implemented an auto-suggestion system with a Trie strucutre for faster performance and better user experience.
+
 - [x] let user search posts by hashtag
 - [x] let user see a list of auto-suggestions 
 
 ### CICD flow built with Amplify & Github
-- [x] implement multiple environments; Master/QA/Prod
+> Implemented multi-environments; Master/QA/Prod, and had each domain SSL certified by AWS Certificate Manager to enable HTTPS
+
 - [x] deploy Master branch to https://dev.stellar-blog.com
 - [x] deployed QA branch to https://qa.stellar-blog.com
 - [x] deployed Prod branch to https://www.stellar-blog.com
-- [x] get each domain SSL certificed by AWS Certificate Manager to enable HTTPS
 
 ![](wiki/CICD_Process.png)
+
+### Performance optimization
+- [x] image rendering with a loader 
 
 ### Mobile viewport support
 - [x] support desktop viewport (window width greater than 600px)
@@ -91,9 +101,6 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [x] support Firefox
 - [x] support Safari
 - [x] support Edge
-
-### Performance optimization
-- [x] image rendering with a loader 
 
 ### Unit-test result
 - [ ] set up a testing environment with Jest (WIP)
