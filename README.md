@@ -104,7 +104,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
-<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/seq-diagram-photo-upload.gif" alt="seq-diagram-photo-upload" />
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/seq-diagram-photo-upload.png" alt="seq-diagram-photo-upload" />
 </details>
 
 ### Search flow by hashtag
