@@ -150,9 +150,9 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/CICD_Process.png" alt="CICD_Process" />
 </details>
 
-### Performance optimization
+## Performance optimization
 
-<details>
+<details open>
   <summary>
     <b>
       Lighthouse performance score (Home page) :star:
@@ -163,22 +163,22 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 </details>
 
 - [x] resized media files to the actual size that users see and then converted to Webp format.
-- [x] pre-loaded google fonts and the background image for shorter loading time
+- [x] pre-loaded google fonts and the background image for shorter loading time.
 
-### Mobile viewport support
+## Mobile viewport support
 - [x] support desktop viewport (window width greater than 600px)
 - [x] support mobile  viewport (window width less than 600px)
 
-### Browser compaitibility
+## Browser compaitibility
 - [x] support Chrome
 - [x] support Firefox
 - [x] support Safari
 - [x] support Edge
 
-### Unit-test result
+## Unit-test result
 - [ ] set up a testing environment with Jest (WIP)
 
-### Web accessbility (with Keyboard)
+## Web accessbility (with Keyboard)
 - [x] let user sign up
 - [x] let user log in
 - [ ] let user browse through nav menus (WIP)
@@ -188,14 +188,15 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [x] let user search posts by hashtags
 - [ ] let user browse a list of auto-suggestions (WIP)
 
-### Internationalization
+## Internationalization
 - [ ] redirect based on user's location (WIP)
 - [x] support English
 - [ ] support Korean (WIP)
 
-### To-do list
+## To-do list
 - [ ] refactor by Typescript
 - [ ] format the code with ESLint, Airbnb Style Guide, and Prettier
+- [ ] improve SEO
 
 ## Meta Data
 Jong-Ho (James) Kim
