@@ -6,7 +6,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Preview of stellar-blog.com :star2:
+      Preview of stellar-blog.com :star:
     </b>
   </summary>
 <br>
@@ -16,7 +16,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Overview diagram of the whole system :star2:
+      Overview diagram of the whole system :star:
     </b>
   </summary>
 <br>
@@ -90,7 +90,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Preview of Photo upload flow :star2:
+      Preview of Photo upload flow :star:
     </b>
   </summary>
 <br>
@@ -100,7 +100,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Sequence diagram :star2:
+      Sequence diagram :star:
     </b>
   </summary>
 <br>
@@ -116,7 +116,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Preview of Search flow :star2:
+      Preview of Search flow :star:
     </b>
   </summary>
 <br>
@@ -126,7 +126,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Sequence diagram (Auto-suggestion flow) :star2:
+      Sequence diagram (Auto-suggestion flow) :star:
     </b>
   </summary>
 <br>
@@ -143,7 +143,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Overview diagram of CI/CD pipeline :star2:
+      Overview diagram of CI/CD pipeline :star:
     </b>
   </summary>
 <br>
@@ -155,7 +155,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Lighthouse performance score (Home page)
+      Lighthouse performance score (Home page) :star:
     </b>
   </summary>
 <br>
