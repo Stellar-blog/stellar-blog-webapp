@@ -42,6 +42,10 @@ export default class MyDocument extends NextDocument {
                         rel="preload"
                         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto&display=swap"
                         as="font" />
+                    <link
+                        rel="preload"
+                        href="https://www.stellar-blog.com/stellar-blog-bg1.webp"
+                        as="image" />
                 </Head>
                 <body>
                     <Main />
