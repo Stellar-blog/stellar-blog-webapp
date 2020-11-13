@@ -136,7 +136,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 ### CI/CD pipeline built with Amplify & Github
 > Implemented multi-environments; Master/QA/Prod, and had each domain SSL certified by AWS Certificate Manager to enable HTTPS
 
-- [x] deploy Master branch to https://dev.stellar-blog.com
+- [x] deployed Master branch to https://dev.stellar-blog.com
 - [x] deployed QA branch to https://qa.stellar-blog.com
 - [x] deployed Prod branch to https://www.stellar-blog.com
 
@@ -151,7 +151,19 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 </details>
 
 ### Performance optimization
-- [x] image rendering with a loader 
+
+<details>
+  <summary>
+    <b>
+      Lighthouse performance score (Home page)
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
+</details>
+
+- [x] resized media files to the actual size that users see and then converted to Webp format.
+- [x] pre-loaded google fonts and the background image for shorter loading time
 
 ### Mobile viewport support
 - [x] support desktop viewport (window width greater than 600px)
@@ -182,7 +194,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [ ] support Korean (WIP)
 
 ### To-do list
-- [ ] refactor with Typescript
+- [ ] refactor by Typescript
 - [ ] format the code with ESLint, Airbnb Style Guide, and Prettier
 
 ## Meta Data
