@@ -159,17 +159,17 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
-<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance.png" alt="performance_score" />
 </details>
 
-<details open>
+<details>
   <summary>
     <b>
-      Lighthouse performance score (Home page) :star:
+      Lighthouse best practices score (Home page) :star:
     </b>
   </summary>
 <br>
-<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/best_practices.png" alt="best_practices_score" />
 </details>
 
 <details>
