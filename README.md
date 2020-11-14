@@ -179,6 +179,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
+
 - original background image format : <b>jpg</b>
 - original background image size : <b>492 kb</b>
 - converted background image format : <b>webp</b>
@@ -194,7 +195,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <br>
 
 - background loading time before pre-loading : <b>877ms</b>
-- background loading time after pre-loading : <b>153ms (5 times faster :rocket:)</b>
+- background loading time after pre-loading : <b>153ms (5 times faster loading :rocket:)</b>
 </details>
 
 ## Mobile viewport support
