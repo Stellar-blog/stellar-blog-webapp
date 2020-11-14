@@ -57,35 +57,35 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - [Click it to see GraphQL schema](https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/amplify/backend/api/stellagraphqlapi/schema.graphql)
 
 ### Blog system
-- [x] let user submit their post
-- [x] let user add hashtags on their post
-- [x] let user see a list of all posts others uploaded
-- [x] let user see a list of posts the user uploaded
-- [x] let user see a list of options for settings
-- [x] let user delete their post
-- [ ] let user edit their post (WIP)
-- [ ] let user follow other bloggers (WIP)
-- [ ] let user like other posts (WIP)
-- [ ] let user comment on a post (WIP)
+- [x] Let user submit their post
+- [x] Let user add hashtags on their post
+- [x] Let user see a list of all posts others uploaded
+- [x] Let user see a list of posts the user uploaded
+- [x] Let user see a list of options for settings
+- [x] Let user delete their post
+- [ ] Let user edit their post (WIP)
+- [ ] Let user follow other bloggers (WIP)
+- [ ] Let user like other posts (WIP)
+- [ ] Let user comment on a post (WIP)
 
 ### Authentication flow built with AWS Cognito
 
-- [x] let user sign up with their email
-- [x] verify user by email
-- [x] let user log in with their username
-- [x] let user log out
-- [ ] let user change their password (WIP)
-- [ ] let user delete their account (WIP)
-- [ ] redirect unauthenticated users (WIP)
+- [x] Let user sign up with their email
+- [x] Let user log in with their username
+- [x] Let user log out
+- [x] Verify user by email
+- [ ] Let user change their password (WIP)
+- [ ] Let user delete their account (WIP)
+- [ ] Redirect unauthenticated users (WIP)
 
 ### Photo upload flow
 > Implemented a draggable & droppable UI for better user experience
 
-- [x] let user upload up to 3 photos at once
-- [x] let user drag and drop their photos
-- [x] let user search a photo with their local OS
-- [x] store user-uploaded photos on AWS S3
-- [ ] convert formats to webp and resize to fit the window with AWS Lambda (WIP)
+- [x] Let user upload up to 3 photos at once
+- [x] Let user drag and drop their photos
+- [x] Let user search a photo with their local OS
+- [x] Store user-uploaded photos on AWS S3
+- [ ] Convert to Webp and resize to fit the window (WIP)
 
 <details>
   <summary>
@@ -110,8 +110,8 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 ### Search flow by hashtag
 > Implemented an auto-suggestion system with a Trie structure for faster performance and better user experience.
 
-- [x] let user search posts by hashtag
-- [x] let user see a list of auto-suggestions 
+- [x] Let user search posts by hashtag
+- [x] Let user see a list of auto-suggestions 
 
 <details>
   <summary>
@@ -136,9 +136,9 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 ### CI/CD pipeline built with Amplify & Github
 > Implemented multi-environments; Master/QA/Prod, and had each domain SSL certified by AWS Certificate Manager to enable HTTPS
 
-- [x] deployed Master branch to https://dev.stellar-blog.com
-- [x] deployed QA branch to https://qa.stellar-blog.com
-- [x] deployed Prod branch to https://www.stellar-blog.com
+- [x] Deployed Master branch to https://dev.stellar-blog.com
+- [x] Deployed QA branch to https://qa.stellar-blog.com
+- [x] Deployed Prod branch to https://www.stellar-blog.com
 
 <details>
   <summary>
@@ -162,41 +162,66 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
 </details>
 
-- [x] resized media files to the actual size that users see and then converted to Webp format.
-- [x] pre-loaded google fonts and the background image for shorter loading time.
+<details open>
+  <summary>
+    <b>
+      Lighthouse performance score (Home page) :star:
+    </b>
+  </summary>
+<br>
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
+</details>
+
+<details>
+  <summary>
+    <b>
+      Resized media files to the actual size that users see and then converted to Webp format. :star:
+    </b>
+  </summary>
+<br>
+</details>
+
+<details>
+  <summary>
+    <b>
+      Pre-loaded google fonts and the background image for shorter loading time. :star:
+    </b>
+  </summary>
+<br>
+</details>
 
 ## Mobile viewport support
-- [x] support desktop viewport (window width greater than 600px)
-- [x] support mobile  viewport (window width less than 600px)
+- [x] Support desktop viewport (window width greater than 600px)
+- [x] Support mobile  viewport (window width less than 600px)
 
 ## Browser compaitibility
-- [x] support Chrome
-- [x] support Firefox
-- [x] support Safari
-- [x] support Edge
+- [x] Support Chrome
+- [x] Support Firefox
+- [x] Support Safari
+- [x] Support Edge
 
 ## Unit-test result
-- [ ] set up a testing environment with Jest (WIP)
+- [ ] Set up a testing environment with Jest (WIP)
 
-## Web accessbility (with Keyboard)
-- [x] let user sign up
-- [x] let user log in
-- [ ] let user browse through nav menus (WIP)
-- [ ] let user upload a photo (WIP)
-- [x] let user add hashtags 
-- [x] let user submit a post
-- [x] let user search posts by hashtags
-- [ ] let user browse a list of auto-suggestions (WIP)
+## Web accessibility (Keyboard navigation)
+- [x] Let user sign up
+- [x] Let user log in
+- [ ] Let user browse through nav menus (WIP)
+- [ ] Let user upload a photo (WIP)
+- [x] Let user add hashtags 
+- [x] Let user submit a post
+- [x] Let user search posts by hashtags
+- [ ] Let user browse a list of auto-suggestions (WIP)
 
 ## Internationalization
-- [ ] redirect based on user's location (WIP)
-- [x] support English
-- [ ] support Korean (WIP)
+- [ ] Redirect based on user's location (WIP)
+- [x] Support English
+- [ ] Support Korean (WIP)
 
 ## To-do list
-- [ ] refactor by Typescript
-- [ ] format the code with ESLint, Airbnb Style Guide, and Prettier
-- [ ] improve SEO
+- [ ] Refactor by Typescript
+- [ ] Format the code with ESLint, Airbnb Style Guide, and Prettier
+- [ ] Improve SEO
 
 ## Meta Data
 Jong-Ho (James) Kim
