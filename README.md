@@ -1,4 +1,4 @@
-# stellar-blog.com
+# stellar-blog.com :rocket:
 > Fullstack webapp deployed on https://www.stellar-blog.com
 
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
@@ -155,7 +155,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details open>
   <summary>
     <b>
-      Lighthouse performance score (Home page) :star:
+      Lighthouse performance score (Home page) :100:
     </b>
   </summary>
 <br>
@@ -165,7 +165,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Lighthouse best practices score (Home page) :star:
+      Lighthouse best practices score (Home page) :100:
     </b>
   </summary>
 <br>
@@ -179,6 +179,10 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
+- original background image format : <b>jpg</b>
+- original background image size : <b>492 kb</b>
+- converted background image format : <b>webp</b>
+- converted background image size : <b>63 kb (88% :small_red_triangle_down:)</b>
 </details>
 
 <details>
@@ -188,6 +192,9 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
+
+- background loading time before pre-loading : <b>877ms</b>
+- background loading time after pre-loading : <b>153ms (5 times faster :rocket:)</b>
 </details>
 
 ## Mobile viewport support
