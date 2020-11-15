@@ -21,9 +21,8 @@ function Card({ data, user }) {
     }, [data.username, user.username])
 
     useEffect(() => {
-        Promise.all(data.postImages.items.map((image) => Storage.get(image.desktopKey)))
-            .then(urls => setImageUrls(urls))
-    }, [])
+        setImageUrls(data.postImages.items.map((image) => image.desktopKey))
+    }, [data])
 
     return (
         <>
