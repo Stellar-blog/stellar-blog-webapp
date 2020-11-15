@@ -205,8 +205,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
-
-- Set to fire user requests every 500 ms, otherwise it'll affect the performance of the browser.
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/Debounce_Search.gif" alt="Debounce_Search" />
 </details>
 
 <details>
