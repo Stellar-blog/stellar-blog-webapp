@@ -51,7 +51,7 @@ export const AccountContainer = styled.div`
         margin: 0; 
         width: 100%;
         border-radius: 0;
-        height: 90vh;
+        height: 93vh;
     }
 `
 

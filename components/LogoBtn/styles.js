@@ -8,5 +8,5 @@ export const Logo = styled.a`
   margin: 0 1rem;
   text-decoration: none;
 
-  ${({ isMobile }) => isMobile && "font-size: 50px; font-weight: bold;"}
+  ${({ isMobile }) => isMobile && "font-size: 40px; font-weight: bold;"}
 `

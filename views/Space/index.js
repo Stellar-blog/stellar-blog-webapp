@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { withRouter } from 'next/router'
 
-// import checkUser from '../../api/checkUser'
+import checkUser from '../../api/checkUser'
 import getPosts from '../../api/getPostsByUsername'
 import getSpace from '../../api/getSpace'
 import Header from '../../components/CommonHeader'
@@ -14,13 +14,12 @@ import {
 } from '../../styles'
 
 function Space({ router }) { 
+    const { user } = checkUser()
     const { lists, loading  } = getPosts(router.query.id)
     const { space, error } = getSpace(router.query.id)
 
     useEffect(()=> {
-        if (error) {
-            router.push('/dashboard')
-        }
+        if (error) router.push('/dashboard')
     }, [error])
 
     return (
@@ -29,7 +28,7 @@ function Space({ router }) {
             <DashboardMain>
                 <NavBar />
                 <FlexBasicContainer>
-                    <MyPosts lists={lists} loading={loading} />
+                    <MyPosts lists={lists} loading={loading} user={user}/>
                     {
                         space &&
                         <SpaceMenu space={space} />

@@ -25,7 +25,7 @@ const defaultForm = {
 
 function CreatePost() {
 
-    const user = checkUser()
+    const { user } = checkUser()
     const router = useRouter()
     const inputRef = useRef()
 

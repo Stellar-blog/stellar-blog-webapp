@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const theme = {
-    primaryFont: "'Open Sans', sans-serif",
-    secondaryFont: "'Roboto', sans-serif",
-    primaryColor: "#4f2361",
-    secondaryColor: "",
-    whiteColor: "",
-    textColor: "",
+  primaryFont: "'Open Sans', sans-serif",
+  secondaryFont: "'Roboto', sans-serif",
+  primaryColor: "#4f2361",
+  secondaryColor: "",
+  whiteColor: "",
+  textColor: "",
 }
 
 export const Typography = styled.p`
@@ -37,7 +37,7 @@ export const Button = styled.a`
 `
 
 export const Main = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(/stellar-blog-bg1.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(https://www.stellar-blog.com/stellar-blog-bg1.webp);
   background-position: center;
   background-size: cover;
   height: 100vh;

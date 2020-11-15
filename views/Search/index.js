@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 
+import checkUser from '../../api/checkUser'
 import searchPosts from '../../api/searchPosts'
 import Header from '../../components/CommonHeader'
 import NavBar from '../../components/PrivateNav'
@@ -12,6 +13,7 @@ import {
 } from '../../styles'
 
 function Search() { 
+    const { user } = checkUser()
     const router = useRouter()
     let term = router.query.id
     if (typeof term === "string") {
@@ -22,7 +24,6 @@ function Search() {
         lists,
         isLoading,
     } = searchPosts(term)
-
     return (
         <>
             <Header />
@@ -33,7 +34,7 @@ function Search() {
                     {
                         (!isLoading && lists.length === 0)
                         ? <NoPosts message={"No search results"} />
-                        : lists.map((item) => <Card key={item.id} data={item} />)
+                        : lists.map((item) => <Card key={item.id} data={item} user={user}/>)
                     }
                 </Center>
             </DashboardMain>

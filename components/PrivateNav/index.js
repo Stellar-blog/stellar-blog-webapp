@@ -12,14 +12,16 @@ import {
 } from './styles'
 
 const PrivateNavBar = () => {
-    const user = checkUser()
+    const { user } = checkUser()
     const isMobile = useResize()
 
     return (
         <Nav>
             <div className="nav-subcontainer">
-                <Logo href="/dashboard" />
-                <SearchBar />
+                <div className="logo-search-container">
+                    <Logo href="/dashboard" />
+                    <SearchBar />
+                </div>
                 <MenuContainer isMobile={isMobile}>
                     {
                         !isMobile

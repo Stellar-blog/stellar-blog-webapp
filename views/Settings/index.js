@@ -9,7 +9,7 @@ import {
 } from '../../styles'
 
 function Settings() { 
-    const user = checkUser()
+    const { user } = checkUser()
 
     return (
         <>
