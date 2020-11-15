@@ -10,7 +10,7 @@ import {
 function Card({ data, user }) {
     if (!data || !user) return null;
 
-    const [imageUrls, setImageUrls] = useState(['/loading.svg'])
+    const [imageUrls, setImageUrls] = useState([])
     const [isOnwer, setIsOwner] = useState(false)
     const [deleted, setDeleted] = useState(false)
 
@@ -21,7 +21,9 @@ function Card({ data, user }) {
     }, [data.username, user.username])
 
     useEffect(() => {
-        setImageUrls(data.postImages.items.map((image) => image.desktopKey))
+        setImageUrls(data.postImages.items.map((image) => {
+            return `${process.env.NEXT_PUBLIC_S3_BUCKET}${image.desktopKey}`
+        }))
     }, [data])
 
     return (
