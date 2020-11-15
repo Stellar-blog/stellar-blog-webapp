@@ -1,4 +1,4 @@
-# stellar-blog.com
+# stellar-blog.com :rocket:
 > Fullstack webapp deployed on https://www.stellar-blog.com
 
 It's a blog style social media webapp built with Next.js & GraphQL on AWS.
@@ -47,7 +47,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - AWS Congnito
 - AWS Lambda
 - AWS Route 53
-- AWs CloudFront
+- AWS CloudFront
 - AWS ElasticSearch
 
 ## Core features
@@ -155,21 +155,21 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details open>
   <summary>
     <b>
-      Lighthouse performance score (Home page) :star:
+      Lighthouse performance score (Home page) :100:
     </b>
   </summary>
 <br>
-<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance.png" alt="performance_score" />
 </details>
 
-<details open>
+<details>
   <summary>
     <b>
-      Lighthouse performance score (Home page) :star:
+      Lighthouse best practices score (Home page) :100:
     </b>
   </summary>
 <br>
-<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/performance_score.png" alt="performance_score" />
+<img src="https://github.com/Stellar-blog/stellar-blog-webapp/blob/master/wiki/best_practices.png" alt="best_practices_score" />
 </details>
 
 <details>
@@ -179,6 +179,11 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
+
+- Original background image format : <b>jpg</b>
+- Original background image size : <b>492 kb</b>
+- Converted background image format : <b>webp</b>
+- Converted background image size : <b>63 kb (88% :small_red_triangle_down:)</b>
 </details>
 
 <details>
@@ -188,6 +193,22 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
     </b>
   </summary>
 <br>
+
+- Background loading time before pre-loading : <b>877ms</b>
+- Background loading time after pre-loading : <b>153ms (5 times faster loading :rocket:)</b>
+</details>
+
+<details>
+  <summary>
+    <b>
+      Cached GraphQL queries on the back-end side (AppSync) :star:
+    </b>
+  </summary>
+<br>
+
+- TTL : 60 seconds
+- Ave. GraphQL query response on Dashboard before cache : <b>544ms</b>
+- Ave. GraphQL query response on Dashboard after cache : <b>374ms (30% :small_red_triangle_down:)</b>
 </details>
 
 ## Mobile viewport support
