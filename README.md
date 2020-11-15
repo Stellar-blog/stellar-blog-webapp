@@ -201,7 +201,31 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
-      Cached GraphQL queries on the back-end side (AppSync) :star:
+      Cached static files on the client side :star:
+    </b>
+  </summary>
+<br>
+
+- TTL : 600 seconds
+- Cached on CDN
+</details>
+
+<details>
+  <summary>
+    <b>
+      Cached user-uploaded images on the client side :star:
+    </b>
+  </summary>
+<br>
+
+- TTL : 31536000 seconds
+- Cached on local memory
+</details>
+
+<details>
+  <summary>
+    <b>
+      Cached GraphQL queries on the server side (AppSync) :star:
     </b>
   </summary>
 <br>
@@ -209,6 +233,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 - TTL : 60 seconds
 - Ave. GraphQL query response on Dashboard before cache : <b>544ms</b>
 - Ave. GraphQL query response on Dashboard after cache : <b>374ms (30% :small_red_triangle_down:)</b>
+- Cached on an EC2 instance with 1.5GB RAM
 </details>
 
 ## Mobile viewport support
