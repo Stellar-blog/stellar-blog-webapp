@@ -201,6 +201,17 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <details>
   <summary>
     <b>
+      Debounced search input by 500 ms :star:
+    </b>
+  </summary>
+<br>
+
+- Set to fire user requests every 500 ms, otherwise it'll affect the performance of the browser.
+</details>
+
+<details>
+  <summary>
+    <b>
       Cached static files on the client side :star:
     </b>
   </summary>
@@ -231,12 +242,17 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 <br>
 
 - TTL : 60 seconds
+- Cached on an EC2 instance with 1.5GB RAM
 - Ave. GraphQL query response on Dashboard before cache : <b>544ms</b>
 - Ave. GraphQL query response on Dashboard after cache : <b>374ms (30% :small_red_triangle_down:)</b>
-- Cached on an EC2 instance with 1.5GB RAM
 </details>
 
-## Mobile viewport support
+## Future improvements
+- [ ] Cache top search keywords on both client and server sides
+- [ ] Infinite loading functionality on the dashboard page
+- [ ] Pre-render blurred images
+
+## Responsive web design
 - [x] Support desktop viewport (window width greater than 600px)
 - [x] Support mobile  viewport (window width less than 600px)
 
@@ -266,8 +282,7 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
 
 ## To-do list
 - [ ] Refactor by Typescript
-- [ ] Format the code with ESLint, Airbnb Style Guide, and Prettier
-- [ ] Improve SEO
+- [ ] Format with ESLint, Airbnb Style Guide, and Prettier
 
 ## Meta Data
 Jong-Ho (James) Kim
