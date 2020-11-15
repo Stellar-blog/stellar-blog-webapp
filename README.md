@@ -206,8 +206,9 @@ It's a blog style social media webapp built with Next.js & GraphQL on AWS.
   </summary>
 <br>
 
+- TTL : 60 seconds
 - Ave. GraphQL query response on Dashboard before cache : <b>544ms</b>
-- Ave. GraphQL query response on Dashboard after cache : <b>374ms (30% response time :small_red_triangle_down:)</b>
+- Ave. GraphQL query response on Dashboard after cache : <b>374ms (30% :small_red_triangle_down:)</b>
 </details>
 
 ## Mobile viewport support
