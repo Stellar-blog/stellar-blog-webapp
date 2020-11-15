@@ -10,7 +10,10 @@ const createPostImages = (formState, createPostRes, userId) => {
     return Promise.all(
         files.map(async (file) => {
             const uniqueName = `${uuidv4()}.${file.type.split("/")[1]}`
-            const storageRes = await Storage.put(uniqueName, file)
+            const storageRes = await Storage.put(uniqueName, file, {
+                acl: 'public-read',
+                cacheControl: 'max-age=31536000',
+            })
 
             const getImageHeight = document.getElementById(file.name).height;
             await API.graphql({
